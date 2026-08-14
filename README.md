@@ -124,6 +124,7 @@ Paper Notes 交流群: `1094559400`
 ```
 docs/
 ├── index.md                          # 总索引（首页，含全站搜索）
+├── leaderboard.md                    # Semantic Scholar 引用排行榜
 ├── CVPR2026/
 │   ├── index.md                      # 会议索引（按领域聚合）
 │   ├── 3d_vision/
@@ -145,6 +146,37 @@ docs/
 ├── CVPR2025/
 └── ECCV2024/
 ```
+
+## 🏆 Semantic Scholar 引用排行榜
+
+站点的「引用榜」页面按 Semantic Scholar `citationCount` 对收录论文排名，并可按其 `influentialCitationCount` 高影响力引用排序。页面支持按会议、研究领域和标题筛选。生成器会：
+
+1. 扫描 `docs/<会议>/<领域>/*.md` 中的标题、DOI、ACL Anthology 与 arXiv 标识；
+2. 先通过最多 500 个标识符的批量请求精确匹配，再对返回标题做本地核验；
+3. 对没有标识符的笔记使用严格的单篇标题匹配，并按 Semantic Scholar Paper ID 去重；
+4. 将稳定匹配缓存到 `data/semantic-scholar-cache.json`，生成 `docs/assets/data/citations.json`。
+
+### 启用自动更新（API key 可选）
+
+工作流默认直接使用 Semantic Scholar 公开 API，无需配置密钥。在 **Actions → Update Semantic Scholar Citation Leaderboard → Run workflow** 可手动更新；之后每周一（北京时间）会自动刷新并提交数据。匿名请求使用共享限流池，生成器遇到 `429` 会退避重试、保存已完成缓存，并在下次继续。
+
+如果希望完成大量标题匹配，可在 [Semantic Scholar API 页面](https://www.semanticscholar.org/product/api#api-key-form) 申请免费 key，并在仓库 **Settings → Secrets and variables → Actions** 中添加可选的 `SEMANTIC_SCHOLAR_API_KEY` secret。官方初始 key 限流为每秒 1 次；程序默认按此速度运行。周更默认每次最多补充 100 个标题查询，DOI/arXiv 批量刷新不受这个数量限制。
+
+本地运行：
+
+```bash
+# 可选：不设置也能使用公开 API
+export SEMANTIC_SCHOLAR_API_KEY="your-key"
+python scripts/update_citation_leaderboard.py
+```
+
+只使用已有缓存重新生成前端数据（不访问网络）：
+
+```bash
+python scripts/update_citation_leaderboard.py --offline
+```
+
+若个别论文需要人工纠正，可在 `data/semantic-scholar-overrides.json` 中将笔记路径映射到经过核验的 Semantic Scholar Paper ID；格式说明见 `data/README.md`。
 
 ## 📄 License
 

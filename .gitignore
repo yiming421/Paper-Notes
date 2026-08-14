@@ -16,3 +16,5 @@ tests/
 pyproject.toml
 SOFTWARE_DOC.md
 paper_notes.egg-info/
+data/semantic-scholar-bootstrap.log
+data/semantic-scholar-bootstrap.pid

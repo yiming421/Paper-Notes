@@ -1,14 +1,8 @@
 name: Search Engine Indexing Submit
 
 on:
-  # 每次部署后自动提交变更页面
-  workflow_run:
-    workflows: ["Deploy MkDocs to GitHub Pages"]
-    types: [completed]
-  # 每天定时提交（消化 Google 积压的未索引页面）
-  schedule:
-    - cron: '0 16 * * *'  # UTC 16:00 = 北京时间 0:00
-  # 手动触发
+  # Fork safety: keep this manual because its credentials and URL-submission
+  # configuration belong to the upstream papernotes.org deployment.
   workflow_dispatch:
     inputs:
       limit:

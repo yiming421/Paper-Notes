@@ -1,8 +1,8 @@
 site_name: 📚 AI Paper Notes
 site_description: 18000+ 篇 AI 顶会论文笔记 | 覆盖 ICLR/CVPR/ACL/NeurIPS/AAAI 等 9 大会议 | 每篇
   5 分钟读懂核心思想
-site_url: https://papernotes.org/
-repo_url: https://github.com/zhaoyang97/Paper-Notes
+site_url: https://yiming421.github.io/Paper-Notes/
+repo_url: https://github.com/yiming421/Paper-Notes
 repo_name: Star on GitHub
 docs_dir: docs
 site_dir: site
@@ -44,6 +44,7 @@ theme:
   font: false
 nav:
 - 🏠 首页: index.md
+- 🏆 引用榜: leaderboard.md
 - 📷 CVPR2026:
   - CVPR2026: CVPR2026/index.md
   - LLM (135):
@@ -25944,11 +25945,10 @@ extra_javascript:
 - javascripts/title-link.js
 - javascripts/mathjax.js
 - javascripts/search-page.js
+- javascripts/citation-leaderboard.js
 extra_css:
 - stylesheets/extra.css
 copyright: ✨本站笔记由 AI 辅助生成，仅供学术参考，如有错误欢迎指正
 extra:
   social: []
   generator: false
-  bing_site_verification: 114D58B390D11BE882DB17E9BF9BF2F2
-  cloudflare_analytics_token: addbd9c7107a490092d47711a630688f

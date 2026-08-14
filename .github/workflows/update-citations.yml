@@ -1,0 +1,78 @@
+name: Update Semantic Scholar Citation Leaderboard
+
+on:
+  schedule:
+    # Monday 02:23 in Asia/Shanghai (Sunday 18:23 UTC).
+    - cron: '23 18 * * 0'
+  workflow_dispatch:
+    inputs:
+      retry_after_days:
+        description: 'Retry unmatched papers after this many days'
+        required: false
+        default: '30'
+      max_title_requests:
+        description: 'Maximum title lookups this run (0 skips them)'
+        required: false
+        default: '100'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: semantic-scholar-citation-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      # Optional: the generator uses the public API when this secret is absent.
+      SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Test leaderboard generator
+        run: python scripts/test_update_citation_leaderboard.py -v
+
+      - name: Refresh citation data
+        env:
+          RETRY_AFTER_DAYS: ${{ github.event.inputs.retry_after_days }}
+          MAX_TITLE_REQUESTS: ${{ github.event.inputs.max_title_requests }}
+        run: |
+          if [ -z "$RETRY_AFTER_DAYS" ]; then
+            RETRY_AFTER_DAYS=30
+          fi
+          if [ -z "$MAX_TITLE_REQUESTS" ]; then
+            MAX_TITLE_REQUESTS=100
+          fi
+          ARGS=(--retry-after-days "$RETRY_AFTER_DAYS")
+          if [ "$MAX_TITLE_REQUESTS" = "0" ]; then
+            ARGS+=(--skip-title-search)
+          else
+            ARGS+=(--max-title-requests "$MAX_TITLE_REQUESTS")
+          fi
+          python scripts/update_citation_leaderboard.py "${ARGS[@]}"
+
+      - name: Validate generated JSON
+        run: |
+          python -m json.tool data/semantic-scholar-cache.json >/dev/null
+          python -m json.tool docs/assets/data/citations.json >/dev/null
+
+      - name: Commit refreshed counts
+        run: |
+          if git diff --quiet -- data/semantic-scholar-cache.json docs/assets/data/citations.json; then
+            echo "Citation data is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/semantic-scholar-cache.json docs/assets/data/citations.json
+          git commit -m "chore: refresh Semantic Scholar citation leaderboard"
+          git push
