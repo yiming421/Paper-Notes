@@ -198,6 +198,17 @@ def extract_dois(markdown: str) -> tuple[str, ...]:
     return tuple(unique)
 
 
+def load_neurips_versions(directory: Path) -> dict[tuple[str, str], list[str]]:
+    """Read identifiers verified against the conference title and author metadata."""
+    versions: dict[tuple[str, str], list[str]] = defaultdict(list)
+    source = directory / "neurips2026-versions.csv"
+    if source.is_file():
+        with source.open(encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle):
+                versions[(row["forum"], normalize_title(row["title"]))].append(row["doi"])
+    return versions
+
+
 def scan_notes(docs_dir: Path) -> list[Note]:
     notes: list[Note] = []
     for path in sorted(docs_dir.glob("*/*/*.md")):
@@ -226,19 +237,24 @@ def scan_notes(docs_dir: Path) -> list[Note]:
         )
     catalog = docs_dir / "assets" / "data" / "neurips2026.csv"
     if catalog.is_file():
+        versions = load_neurips_versions(catalog.parent)
         with catalog.open(encoding="utf-8", newline="") as handle:
             for row in csv.DictReader(handle):
                 forum = row["forum"]
                 if not re.fullmatch(r"[\w-]{10}", forum):
                     raise ValueError(f"Invalid NeurIPS 2026 forum ID: {forum}")
+                title_key = normalize_title(row["title"])
+                identifiers = list(versions.get((forum, title_key), ()))
+                if row["arxiv"]:
+                    identifiers.append(f"10.48550/arxiv.{row['arxiv']}")
                 notes.append(Note(
                     path=f"NeurIPS2026/{forum}.md",
                     title=row["title"],
-                    title_key=normalize_title(row["title"]),
+                    title_key=title_key,
                     conference="NeurIPS2026",
                     area=row["area"],
                     conference_year=2026,
-                    dois=(f"10.48550/arxiv.{row['arxiv']}",) if row["arxiv"] else (),
+                    dois=tuple(dict.fromkeys(identifiers)),
                     external_url=f"https://openreview.net/forum?id={forum}",
                 ))
     return notes
@@ -866,7 +882,7 @@ def should_search_title(
 ) -> bool:
     if not match or match.get("title_key") != note.title_key:
         return True
-    if match.get("match_method") in {
+    if match.get("paper_id") or match.get("match_method") in {
         "manual",
         "manual_exclude",
         "doi",
@@ -958,6 +974,7 @@ def build_public_data(
                 "notes": [
                     {
                         "path": note.url,
+                        **({"title": note.title} if note.external_url and note.title != paper["title"] else {}),
                         "conference": note.conference,
                         "area": note.area,
                     }

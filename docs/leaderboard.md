@@ -16,17 +16,17 @@ hide:
 
 基于 [Semantic Scholar](https://www.semanticscholar.org/) 的公开引用数据，按论文去重并定期更新。可按会议、年份、研究领域或标题筛选；点击论文标题可阅读站内解读或打开论文的 OpenReview 页面。
 
-[查看 NeurIPS 2026 引用排名](?conference=NeurIPS&year=2026) · [下载 NeurIPS 2026 完整目录（CSV）](assets/data/neurips2026.csv)
+[查看 NeurIPS 2026 引用排名](?conference=NeurIPS&year=2026) · [下载 NeurIPS 2026 完整目录（CSV）](assets/data/neurips2026.csv) · [下载 11 月 28 日逐篇补配明细（2,785 篇，CSV）](assets/data/neurips2026-match-audit-20261128.csv)
 
-NeurIPS 2026 收录主赛道、评测与数据集赛道及立场论文赛道。目录保留每篇录用论文，成功匹配 Semantic Scholar 后进入排名。
+NeurIPS 2026 收录主赛道、评测与数据集赛道及立场论文赛道。目录保留每篇录用论文，成功匹配 Semantic Scholar 后进入排名。 补配明细中的空白引用数表示尚未核实，数字 0 表示索引已收录且返回零引用。
 
 <div id="citation-leaderboard" data-source="../assets/data/citations.json" data-latest="https://raw.githubusercontent.com/yiming421/Paper-Notes/main/docs/assets/data/citations.json">
 
 <div class="cl-stats" aria-label="排行榜统计">
-  <div class="cl-stat"><span data-cl-stat="works">—</span><small>已匹配论文</small></div>
-  <div class="cl-stat"><span data-cl-stat="citations">—</span><small>引用总数</small></div>
-  <div class="cl-stat"><span data-cl-stat="influential">—</span><small>高影响力引用</small></div>
-  <div class="cl-stat"><span data-cl-stat="coverage">—</span><small>条目匹配率</small></div>
+  <div class="cl-stat"><span data-cl-stat="works">—</span><small>全站已匹配论文</small></div>
+  <div class="cl-stat"><span data-cl-stat="citations">—</span><small>全站引用总数</small></div>
+  <div class="cl-stat"><span data-cl-stat="influential">—</span><small>全站高影响力引用</small></div>
+  <div class="cl-stat"><span data-cl-stat="coverage">—</span><small>全站条目匹配率</small></div>
   <div class="cl-stat"><span data-cl-stat="updated">—</span><small>数据更新时间</small></div>
 </div>
 
@@ -96,5 +96,5 @@ NeurIPS 2026 收录主赛道、评测与数据集赛道及立场论文赛道。�
 ## 数据口径
 
 - 总引用取自 Semantic Scholar 的 `citationCount`；「高影响力引用」取自 `influentialCitationCount`，是其算法判定对施引论文有显著影响的引用子集。不同学术数据库的收录范围与合并规则不同，数字不会完全一致。
-- 优先通过 DOI、ACL Anthology DOI 与 arXiv ID 精确查询；每个结果还会经过严格标题核验，未带标识符的笔记才使用标题匹配。同一 Semantic Scholar 论文的多篇站内笔记只计一次。
+- 优先通过 DOI 或 arXiv 编号查找论文。NeurIPS 2026 的改名稿还会比对会场旧题名、作者、摘要和项目页。每篇作品按 Semantic Scholar 记录去重，引用数只计一次。
 - Semantic Scholar 尚未收录或无法可靠匹配的论文不会进入排名，页面上的「笔记覆盖率」会公开显示当前匹配范围。自动更新可使用无需密钥的公开 API；遇到共享限流时会保留缓存并在下次继续。

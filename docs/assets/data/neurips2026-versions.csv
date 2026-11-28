@@ -1,0 +1,434 @@
+forum,title,doi
+02iC73NJ6H,Vermeer: Autoregressive generative modeling of microscopy predicts protein localization,10.64898/2026.06.01.729395
+0R23YXfZQM,When Guessing is Rewarded: Rethinking Language Model Evaluation with Distributional Uncertainty Scoring,10.48550/arxiv.2510.04302
+0ca8UlAbiR,VecUQ-OT: Aggregating Uncertainty Measures via Multivariate Ranks,10.48550/arxiv.2509.22380
+0x8H3vwcGg,Unpacking the Evaluators: How Configuration Shapes the Evaluation of Alignment in Explainable AI,10.48550/arxiv.2611.30816
+0xZQKeFDC4,BodyBench: Evaluating Adversarial Image Defenses Against AI Nudification Inpainting,10.48550/arxiv.2611.31774
+13UKdODUdP,NeuroFaith: Evaluating Mechanistic Faithfulness of LLM Free Text Self-Explanation at the Concept Level,10.48550/arxiv.2506.09277
+1Zx0QQnAfD,Long-Context Language Models Require Extreme Sparsity in Context Dimension,10.48550/arxiv.2605.24168
+1gT9qIbj9f,SWE-Protégé: Small Language Models for Software Engineering Through Learned Expert Collaboration,10.48550/arxiv.2602.22124
+1yPTCbmakU,NeuralFieldManifold: Uncovering the Manifold Geometry of Local Field Potentials,10.64898/2026.10.28.762631
+25TuIlUEUu,Exact Regular-Constrained Sampling for Variable-Order Markov Generation,10.48550/arxiv.2605.07839
+2TcjzzhWse,The Illusion of Automatically Orchestrated Multi-Agent Advantage,10.48550/arxiv.2606.13003
+2Wv7TpQl5l,Knocking-Heads Attention: Drop-in Shared Projections for Cross-Head Coordination,10.48550/arxiv.2510.23052
+2kzyCdrkUn,Regret-Optimal Wasserstein-Robust Regression,10.48550/arxiv.2610.42109
+38h1p7GCKa,Predicting Species Splits: A Challenging Fine-Grained Benchmark for Category Discovery,10.48550/arxiv.2611.24672
+3XO2JXx10F,From sequences to schemas: low-rank recurrent dynamics underlie abstract relational representations,10.64898/2026.04.10.717706
+3ZO4NGunEr,Exponential Map Models as an Interpretable Framework for Generating Neural Spatial Representations,10.1101/2025.09.25.678504
+3eGkK2Bn1c,Incremental Multiple Oracle,10.65109/nfsi9839
+3eGkK2Bn1c,Incremental Multiple Oracle,10.48550/arxiv.2406.08683
+3pB5d76pyz,spora: A Unified Multimodal Dataset for Spatial Proteomics,10.48550/arxiv.2610.24002
+3qspmxVnC1,Where Tabular Foundation Models Falter on Genetic Data: Datasets That Expose and Provide a Path to Address the Gap,10.64898/2026.09.25.754520
+4WI2wAgqbO,MindGames:A Multi-Agent Benchmark and Trajectory Dataset for Evaluating Social and Strategic Reasoning in LLMs,10.48550/arxiv.2605.29512
+4WpEeaOeGW,TabBioMed: A Large-Scale Benchmark for Biomedical Tabular Learning,10.48550/arxiv.2611.23779
+4eE8q4LYIm,EsoLang-Bench: Evaluating Large Language Models via Esoteric Programming Languages,10.48550/arxiv.2603.09678
+4ewSWxLXWS,Don't Waste Population: Post-Anneal Refinement for Combinatorial Optimization,10.48550/arxiv.2611.33766
+4kauy5rN2S,Learning Acceptable Lotteries via Queries: Minimizing Aggregated Violation Distances,10.48550/arxiv.2611.29555
+4sTuTf9CyC,A Retained-Signal Interface for LLM Watermark Robustness under Paraphrase,10.5281/zenodo.23768908
+4sTuTf9CyC,A Retained-Signal Interface for LLM Watermark Robustness under Paraphrase,10.5281/zenodo.23768909
+4w3wfZ8itN,Towards Convergence of PPO: An Approximate Ascent Approach,10.48550/arxiv.2602.03386
+55XffjPoPJ,Cyclic Discrete Diffusion: A Novel Multi-Class Segmentation Refinement Technique,10.48550/arxiv.2611.28107
+5MmRU4iPle,Sample Size Design for Bounds on Discrete Probabilities of Causation,10.48550/arxiv.2602.17070
+5rS8m8pxgo,BrainWorld: Modeling Whole-Brain Functional Dynamics through Predictive 4D fMRI Generation,10.48550/arxiv.2606.17742
+5rpJ5pgTQv,Geometry-Aware Directional Alignment for Coherent Model Merging,10.48550/arxiv.2512.00391
+5tpJaR5P0v,probly: Uncertainty-Aware Machine Learning,10.48550/arxiv.2611.29762
+6C8mx74erl,Spectral Estimation with Deformed Decompression,10.48550/arxiv.2506.11994
+6C8mx74erl,Spectral Estimation with Deformed Decompression,10.48550/arxiv.2611.26945
+6JUMpZWGTT,Synthetic Web: Benchmarking Language Agents under Adversarial Search Ranking,10.48550/arxiv.2603.00801
+6StcC3knUL,Training-Free 3D Editing via Feature-Divergence Localization and Trajectory Correction,10.48550/arxiv.2611.29165
+6VSvsiTqB8,Ego-HMB: Human Motion Bridging from Egocentric Images via A Motion Bridge Diffusion Model,10.48550/arxiv.2611.29218
+6W21Zo9L7E,On the Learnability of Model Reprogramming: A Reachability and Relabeling Perspective,10.48550/arxiv.2611.33889
+6WH4HKUrJn,Scale-mixture Langevin sampling in the subspaces of recurrent cortical circuit dynamics,10.64898/2026.09.28.754844
+746elmHkM0,Can Folding Models Tell Binders from Bluffers? Evidence from POISK: The Patent-Derived Antibody Dataset,10.64898/2026.10.24.761513
+7Okh54hj8U,SOOHAK: A Mathematician-Curated benchmark for Assessing Research-level Math Capabilities of LLMs,10.48550/arxiv.2605.09063
+7S3W9FIQbm,SAGE: Evidence-First Biomarker Discovery through Multi-Agent Reasoning,10.48550/arxiv.2602.00953
+7TUyXMSfhp,Position: The Road to Generalizable Neuro-Symbolic Learning Should be Paved with Foundation Models,10.48550/arxiv.2505.24874
+7Y4hAbPn1J,"The Agentic Oversight Tax: Supervising AI Agents Has a Cognitive, Affective and Organizational Cost that Must Be Measured",10.2139/ssrn.7705539
+7fVfD6Nmw4,Space-Optimal Streaming Algorithms via Efficient Encodings,10.48550/arxiv.2504.16229
+7jWvuU6Lb6,PVFormer: Proper Velocity Transformer for Stable and Scalable Hyperbolic Representation Learning,10.48550/arxiv.2611.30785
+8gjD9mKs1q,OpenSanctions Pairs: A Large-Scale Dataset for Pairwise Entity Matching,10.48550/arxiv.2603.11051
+8qRMs3zaOJ,A Multimodal Benchmark for Evaluating Cause-of-Death Inference Using Child Health and Mortality Data,10.64898/2026.07.13.26357980
+8tntvR1it9,"Joint protein, mRNA, and DNA sequence design and optimization with nucleotide-level Potts models",10.64898/2026.10.05.756407
+93U7FTmrsL,BrainWhisperer: Leveraging Whisper for Speech Decoding in Neuroprosthetics,10.48550/arxiv.2603.13321
+9Cq7vYEYym,ReGuidance: Diffusion Steering with Strong Latent Initializations Solves Hard Inverse Problems,10.48550/arxiv.2506.10955
+9UVUeqvO8L,Efficient and Simple Data Mixing All the Time,10.48550/arxiv.2605.15220
+9ZcIwyPLGI,Transferring Architecture as an Optimization Prior,10.48550/arxiv.2611.34816
+9kbTg0tKKr,Constraint Adherence Under Iterative Pressure in Multi-Turn LLM Ideation,10.48550/arxiv.2604.28031
+9zIIpQP6FM,Default Feature Representations of the Cognitive Map,10.64898/2026.05.11.724436
+AVTJEREEah,NPCBench: A Clinical Apprenticeship Benchmark for Guideline-Constrained Care-Pathway Reasoning in Nasopharyngeal Carcinoma,10.48550/arxiv.2611.08369
+AW5VdyuenU,How Language Models Compress and Compare: Understanding Selection with Token Covariance Maps,10.48550/arxiv.2611.26874
+AWvO8s9XuP,Accuracy of Noise Ceiling Estimators for Brain Scores,10.12751/nncn.bc2026.362
+AWvO8s9XuP,Accuracy of Noise Ceiling Estimators for Brain Scores,10.48550/arxiv.2611.32792
+AcEBYF0OfF,nnTrace: Detecting and Localizing Silent Bugs in Distributed Training,10.48550/arxiv.2506.09280
+AtjnWVu79Q,AccelEval: A Whole-Program Benchmark for LLM-Generated CPU-to-GPU Code Acceleration,10.2139/ssrn.6835659
+BZpjhtRxCt,AgenticVBench: Can AI Agents Complete Real-World Video Production Tasks?,10.48550/arxiv.2605.27705
+Bfr3loyFOm,Dynamics of Collective Diversity in Human–AI Co-Creation for Creative Tasks,10.48550/arxiv.2611.33192
+BhKsvAYJDV,kVNN: Learnable Volterra Network Kernels,10.48550/arxiv.2604.15141
+ByGhl9qdO1,RVCBench: Benchmarking Robustness of Voice Cloning Across Modern Audio Generation Models,10.48550/arxiv.2602.00443
+C3vudFgQi2,Inference and estimation with unidentifiable latent treatment effects,10.48550/arxiv.2502.08776
+CA9dsXjWGT,Thinking with Visual Primitives,10.5281/zenodo.20125350
+CA9dsXjWGT,Thinking with Visual Primitives,10.5281/zenodo.20125351
+CBJACCIylF,SciResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery,10.48550/arxiv.2604.25256
+CTPhY8k8EQ,Fast and Consistent Structure Learning in Graphical Models via Approximate Cross-Validation,10.48550/arxiv.2611.30822
+CZkji2IRik,Stochastic Approximation Approach for Decentralized Optimization on Time Varying Random Networks,10.48550/arxiv.2410.18774
+CaD34X3ptc,Instantiation of Human Values in Image Generation,10.48550/arxiv.2611.31253
+CjeTYr8Dt9,HireWatch: Evaluating LLM Compliance with U.S. Employment Law Under Contextual Pressure,10.48550/arxiv.2611.24970
+CkmAPV0HiB,AMARIS: Merging Generalist and Specialist LLMs via Adaptive Subspace Inheritance,10.48550/arxiv.2611.27369
+CuRV56FVBy,The Aleatoric-Epistemic Dichotomy of Uncertainty is Meaningful and Indispensable for Machine Learning,10.2139/ssrn.6783338
+D2Ld3EwMVg,Learning Preference Representations for Preference-Conditioned Image Generation,10.48550/arxiv.2512.06020
+DF6i5h0EXW,Tokenization and Architecture Jointly Allocate Component Roles in Time Series Transformers,10.48550/arxiv.2611.31730
+DMQt7OrYIm,On the Efficiency of Structured Pruning in Small Language Model Pretraining,10.48550/arxiv.2503.05920
+DNHeh3cBpR,Efficient Adaptive Data Analysis over Dense Data Distributions,10.48550/arxiv.2602.07732
+DSqfxgcLo1,DiversePlace: Diversity-Seeking Curriculum Reinforcement Learning for Macro Placement,10.48550/arxiv.2611.34472
+DYlByUybv0,DeFlowCritic: Dense Latent Reward Alignment for Text-to-Image Flow Matching Models,10.48550/arxiv.2611.28265
+Dn8mqYHQ8S,EnvTrap: Revealing the Environment-Only Attack Surface in Embodied AI via Consequence-Blind Action Execution,10.48550/arxiv.2611.30004
+DnD9EjVFG3,Convergence Guarantees of Discrete Flow Matching,10.48550/arxiv.2605.08882
+Dp0w9FyAUE,MPCI-Bench: A Benchmark for Multimodal Pairwise Contextual Integrity Privacy Evaluation of Language Model Agents,10.48550/arxiv.2601.08235
+DrGKhgoPSC,Coupling-Aware Reinforcement Learning for Co-Evolving Graph Games,10.48550/arxiv.2611.28351
+E3s5CojRu9,IDEAFix: Evaluation Framework for Creative Defixation Prompting in LLMs,10.48550/arxiv.2606.00875
+E75sBSUY4i,Contact Geometry for Generative Models: An Unbalanced Optimal Transport Formulation,10.48550/arxiv.2611.32547
+Eh2LNe24lx,DARE: Dual-Level Adversarial Learning with Domain-Aware Regularization for Whole Slide Image Classification,10.48550/arxiv.2611.30589
+El13WPr9FG,Compressible Representations: Functional Spines in Deep Neural Networks,10.48550/arxiv.2611.31817
+EvaVcjvUjx,BenchRep-T: A Systematic Evaluation of T-Cell Repertoire-Based Disease Diagnostics,10.64898/2026.06.09.727013
+ExCVh3IQLg,Stranger Things: When Objects Appear Without Their Typical Neighbors,10.48550/arxiv.2611.34881
+EyCx9ODkOb,Can Ideologues Agree on Quality? From Non-identifiable Latent Factors to Collective Outcomes,10.48550/arxiv.2611.28615
+FUpw0l0XS6,Aggregation Dispersion: An Information-Geometric Diagnostic of Oversmoothing in Graph Neural Networks,10.48550/arxiv.2611.29600
+Fogx1QxJIm,Consumer Search and Social Learning in Agentic Markets,10.48550/arxiv.2603.25893
+G03rvcN5Fe,TrialAgentBench: Evaluating AI Agents for Clinical-Trial Analysis and Long-Horizon Drug-Development Decisions,10.48550/arxiv.2611.30916
+GACGdvulrX,HyperFlow: Gradient-Free Test-Time Adaptation for Cross-Domain Few-Shot Classification,10.48550/arxiv.2504.15323
+GDBChfsv9N,Long-Rollout Stability in AI Weather Models: A Quantitative Benchmark and Analysis,10.48550/arxiv.2605.30184
+GEJEVd3MY5,Stop Using Plausibility as the Criterion for Explainable AI,10.48550/arxiv.2303.17707
+GEQl2wCPnq,The Long-Run Behavior of Regularized Learning in Games under Uncertainty,10.48550/arxiv.2406.09241
+GFLgVpdI1N,Polynomial Activations for Transformers,10.48550/arxiv.2410.18613
+GVMikNSGQx,A Diagnostic Benchmark for Layered Layout and Template-Variant Reasoning,10.48550/arxiv.2604.04192
+GWo2PCEWu8,Spectral Insights from the Unconstrained Feature Model for Neural Multi-Output Regression,10.48550/arxiv.2505.09308
+GYHjzo1bhV,The limbic navigation system as a hierarchical RNN,10.64898/2026.10.19.760224
+GaxSVzlXpM,Weird Generalization from Narrow Finetuning: Persona Shifts and Inductive Backdoors,10.48550/arxiv.2512.09742
+GgBCKP1QOb,Trustworthy AI Must Account for Interactions,10.48550/arxiv.2504.07170
+GgN3oK68Eu,Introspection Tools Help LLMs Understand and Control Themselves,10.2139/ssrn.7697859
+Gi4Lt0IJph,MODULE: A Mutual-Promoting Deep Unfolding Framework Towards Degradation-Robust Multi-modal Image Fusion,10.48550/arxiv.2611.27269
+GzkBhDQNKM,Representation in Finite-Context Prediction: An Analysis of Tokenization and Fragmentation,10.48550/arxiv.2605.13485
+H9UpVBr5RW,"HierSVA: A Data Synthesis Pipeline, Dataset, and Benchmark for LLM-Generated SystemVerilog Assertions on Hierarchical RTL",10.48550/arxiv.2606.13706
+HGL8gQMjLg,TPRL: Adaptive Visual Token Pruning in LVLMs via Language-Guided Reinforcement Learning,10.48550/arxiv.2603.13394
+HIJXWUeWXw,"Beyond Training Time, Test-Time Coordination is Essential for Cooperative MARL",10.48550/arxiv.2610.17409
+HcuEN74kvm,TDBench: Benchmarking Vision Language Models on Top-Down Image Understanding,10.48550/arxiv.2504.03748
+I6C1jbK29Z,Exact-Form Regret and Conservative Correlated Equilibria,10.48550/arxiv.2609.09466
+IHZnRdQHFQ,ReasoningShield: Safety Moderation over Reasoning Traces of Large Reasoning Models,10.48550/arxiv.2505.17244
+IWp0p0ZBCj,MedMisBench: Measuring Epistemic Resilience of LLMs Under Misleading Medical Context,10.64898/2026.05.25.727671
+IWp0p0ZBCj,MedMisBench: Measuring Epistemic Resilience of LLMs Under Misleading Medical Context,10.48550/arxiv.2606.12291
+IY4QbYfFe4,mRNABench: A curated benchmark for mature mRNA property and function prediction,10.1101/2025.07.05.662870
+Iig20MDcGt,The Marauder’s Map: Bézier Manifolds Reveal Hidden Surfaces for Model Merging and Ensembling,10.48550/arxiv.2611.33353
+IitWJ3UhQS,Improved Sample Complexity of Robust Reinforcement Learning with KL Uncertainty Sets,10.48550/arxiv.2611.33592
+Ivv7XxpFxV,Attack-Inference Aligned Universal Adversarial Attacks on Video Object Segmentation,10.48550/arxiv.2611.32658
+J653w2Pft0,V2VFusion: Text-Controlled Video-to-Video Diffusion for Degradation-Aware Video Fusion,10.48550/arxiv.2611.27063
+J6eKxKuBeW,Instance-Dependent Bandit Convex Optimization in One Dimension,10.48550/arxiv.2611.31608
+JDZWX9hyyq,"Auditing the Judge: Human-Derived Bias Discovery, Quantification, and Mitigation in LLM Judges",10.48550/arxiv.2611.33065
+JFNpUWpOmR,GUI-Libra: Data-Efficient Post-Training for Reliable Reasoning-and-Acting in Native GUI Agents,10.48550/arxiv.2602.22190
+JHXwv04ufz,Chain-of-Thought Is Not Sufficient for Explainability,10.48550/arxiv.2611.31271
+JfJ4tqahba,MinerU2.5-Pro: Pushing the Limit of Document Parsing via a Calibrated Evaluation-Data Flywheel,10.48550/arxiv.2604.04771
+JzZtdS0p1e,EgoSurgHands: An Egocentric 3D Hand Pose Dataset & Benchmark for Open-Surgery Training,10.48550/arxiv.2611.27101
+KAFamWBzoo,ThousandWorlds: A benchmark for emulating the climates of potentially habitable exoplanets,10.48550/arxiv.2606.18338
+KM1WIINeDC,On the Origin of Algorithmic Progress in AI: Evidence from Language Model Pre-Training,10.48550/arxiv.2511.21622
+KUMjFWdsDg,EvoDev-Bench: Evaluating Coding Agents in Multi-Turn Iterative Interactions,10.48550/arxiv.2605.24110
+KXKtTAY4Fb,Occlusion-Aware Text-To-Image Generation,10.48550/arxiv.2607.03488
+Kbp9kmDIDc,SC$^3$: A Multi-Solvent Solubility Challenge and Benchmark,10.48550/arxiv.2606.07656
+Ke4tOr2Cva,MARBLE: an Agent Benchmark for Spatial Reasoning and Visual Abstraction,10.48550/arxiv.2506.22992
+Kutg1nC7K3,"Tri-Prompting: Controllable Video Generation with Scene, Subject, and Motion Prompts",10.48550/arxiv.2603.15614
+L0HRufAy5B,SpikeSTAG: A Dendritic Compartmental Spiking Graph Network for Multivariate Time-Series Forecasting,10.48550/arxiv.2508.02069
+LICZTK9DS7,Atoms and Pivot Based Correlation Clustering,10.48550/arxiv.2603.12052
+LZ6PlPtTUt,Routeability Before Routing: Routeability Audit Protocol (RAP) and RouteabilityBench for Audited LLM Model Selection,10.48550/arxiv.2611.34825
+LfxKFrgnlA,On Adaptive Step Sizes for Eligibility Traces in Deep Reinforcement Learning,10.48550/arxiv.2611.29178
+LiEjINF4dN,Mesh Invaiant Infinite Dimensional Adaptive MCMC for Latent Gaussian Processes,10.48550/arxiv.1804.04859
+LiIO6ykiB6,LeCellModel: Interpretable Density Estimation over the Gene Expression Manifold,10.48550/arxiv.2611.30955
+LvYWFrtR8k,Geometry-Aware Representation Denoising for Multi-view Image Restoration and 3D Reconstruction,10.48550/arxiv.2605.26230
+MGjtyMonYy,Outbidding and Outbluffing Elite Humans: Mastering Liar’s Poker via Self-Play and Reinforcement Learning,10.48550/arxiv.2511.03724
+MIAM3vbVhL,TC-UAP: Towards Video Protection Against Generative AI,10.48550/arxiv.2607.13336
+MMS2MVw0et,Tree Training: Efficient LLM Training on Tree-Structured Trajectories,10.48550/arxiv.2511.00413
+MPOsD4X94t,Towards instance-dependent regret optimality in Episodic MDPs with Posterior Sampling,10.48550/arxiv.2610.26029
+Mbv63Mz4IY,Agents as Neuro-Symbolic Reasoners: Path Feasibility Reasoning for Precise Static Bug Detection,10.48550/arxiv.2506.10322
+MepgP6Rx39,UtoMe: Observation-Uncertainty-Guided Token Merging for Weather Foundation Models,10.48550/arxiv.2610.25001
+MsVDpPS4yS,Hearing the Unspoken: Simulator-Induced Asymmetric-View Policy Optimization for Proactive Task-Oriented Dialogue,10.48550/arxiv.2605.22240
+MxjxPW0HSQ,Castle-in-the-Air: Probing the Foundational Visual Deficits of MLLMs via Bottom-Up Cognitive Factors,10.48550/arxiv.2502.16435
+N0qn9jBOCR,Categorical Bayes filtering for computational phenotyping in adaptive learning,10.64898/2026.05.14.725268
+Nc74o46L3Z,Don't Discard Your Rollouts: Reusing Teacher RL Traces for Student Distillation,10.48550/arxiv.2611.26803
+Nj1WTx7zLW,Learning the Projection onto the Data Support: Distribution Learning that Avoids Memorization,10.48550/arxiv.2611.28234
+NtIm78Ijq1,GeoDial: A Multimodal Dialog Tutoring Dataset for Geometry Problem-Solving with Visual Tutor Turns,10.48550/arxiv.2606.12419
+Nx6gxXwb7V,CasePlay: Self-Play Reinforcement Learning from Case Reports for Medical Reasoning,10.48550/arxiv.2610.24952
+O7QMMCGEnE,Topological Invariance and Breakdown in Learning Dynamics,10.48550/arxiv.2510.02670
+O98QtBcpjG,More Is Not More: What Matters for Opinion Diversity in LLM Simulations?,10.48550/arxiv.2607.20429
+OBmtKw49N3,Geometric decomposition of prompt steering,10.48550/arxiv.2606.03093
+ObEzynFfiu,Exploring Multi-Order Self-Similarity for Motion Understanding,10.48550/arxiv.2604.20760
+OddJPCN8CO,Med-Agentic: Distilling Agentic Medical Reasoning with Internalized Meta-Capabilities,10.48550/arxiv.2611.28176
+P9oiEDJVAl,SoccerNarrate: Event-Grounded Streaming Soccer Commentary with Macro-Window Preference Alignment,10.48550/arxiv.2611.32153
+PRnblGnQBU,"LEAN: Library-Based Adaptation for Asynchronous, Federated Fine-Tuning",10.48550/arxiv.2611.26805
+PVo9A82GnZ,Amortized Guidance for Image Inpainting with Pretrained Diffusion Models,10.2139/ssrn.6732140
+PVo9A82GnZ,Amortized Guidance for Image Inpainting with Pretrained Diffusion Models,10.2139/ssrn.7696501
+PVo9A82GnZ,Amortized Guidance for Image Inpainting with Pretrained Diffusion Models,10.48550/arxiv.2605.13010
+PcafO7KeeW,Argus: A Cross-Regime Study of Uncertainty Quantification Transferability in Single-Step GUI Grounding,10.48550/arxiv.2606.25760
+PfhroPusVX,Position: LLM Privacy Requires a Lifecycle-Wide Approach,10.48550/arxiv.2510.01645
+PgXWIFAiIh,Learning the Committor Function using Weighted Ensemble Simulations,10.48550/arxiv.2611.15963
+PiL1EEzHt9,TIDE: Token Identity Delivered Everywhere in LLMs,10.48550/arxiv.2605.06216
+PoLjtyYc3T,SpecLoR: Improving Video Generation with Inference-Time Spectral Lookahead Rectification,10.48550/arxiv.2606.11969
+PrL4Tfo9jW,Adaptive LLM Routing for Multi-Turn Conversations with Continuously Evolving User Queries,10.48550/arxiv.2604.12385
+Q5Hpa44zeJ,Can Metadata Fix the Gauge? Calibration Turns Sparse Multi-Source Learning from Sparse PCA into Sparse Mean Recovery,10.48550/arxiv.2610.25663
+Q7Y8eh12e2,CrafterDojo: An Integrated Research Suite for Building Open-Ended Embodied Agents in Crafter,10.48550/arxiv.2508.13530
+Q9ifmP2xFG,Adaptive Attribute Completion with Representation Space for Incomplete Graph Domain Adaptation,10.5281/zenodo.17264522
+Q9ifmP2xFG,Adaptive Attribute Completion with Representation Space for Incomplete Graph Domain Adaptation,10.5281/zenodo.17264523
+QEtoKLRzjN,C3H: Compression-to-Consensus Criteria Hijacking in Multimodal LLM Recommender Systems,10.48550/arxiv.2611.32780
+QzsZg9sldw,Non-Serial Inter-Area Synergy in the Macaque Ventral Stream,10.64898/2026.05.06.723331
+RHtNN9ZMbC,Worldscape-MoE: A Unified Mixture-of-Experts Architecture for Scalable Multi-Control Video Generation World Modeling,10.48550/arxiv.2607.03964
+RM3k5s1pJM,How Selection Shapes Diversity in LLM Ecosystems,10.5281/zenodo.23112843
+RM3k5s1pJM,How Selection Shapes Diversity in LLM Ecosystems,10.5281/zenodo.23113572
+RM3k5s1pJM,How Selection Shapes Diversity in LLM Ecosystems,10.5281/zenodo.23178030
+RMkXEqB3sY,Interpretable Transformers with Sparse Attention Post-training,10.48550/arxiv.2512.05865
+RMzSje9qtp,Beyond Success Rates: Trainability and Extractability in Offline GCRL,10.48550/arxiv.2602.05459
+RUIN0YgMdQ,Split-RL: Local Conflict Resolution in Reinforcement Learning,10.48550/arxiv.2611.34799
+RY4Fu0ynNr,Beyond Truthfulness: Evaluating Honesty in Large Language Models,10.48550/arxiv.2503.03750
+RZTeyoxP6N,"VerifyThisBench: Joint Evaluation of Code, Specifications, and Proofs",10.48550/arxiv.2505.19271
+RnsvFICNwY,Variance-Adaptive Optimal Algorithm for Reinforcement Learning with MNL Function Approximation,10.48550/arxiv.2605.28364
+RqtKLn3TDs,Uncovering the latent structure of interwoven population and temporal codes,10.64898/2026.05.11.724260
+RwFzh7uPPD,Rethinking Knowledge Distillation for Diffusion Language Models,10.48550/arxiv.2611.33670
+Rx75ZMFQKT,Reasoning with Undecoded Tokens in Diffusion Language Models,10.48550/arxiv.2602.03769
+RzrYEYn0Uz,Membership Inference on Synthetic Single-Cell Genomic Data,10.64898/2026.01.22.701160
+S19nBzjygT,On the Impact of Extra Information in Bandit Learning: More is Not Always Merrier,10.48550/arxiv.2611.33479
+SLQ96uBfLV,MorphGen: Controllable Cell-Image Generation with Biological Representation Alignment,10.48550/arxiv.2510.01298
+SSyBnCPk9V,Demystifying Classifier-Free Guidance for Auto-Regressive Image Generation,10.48550/arxiv.2611.29002
+SXZrjQXtkB,Robust and Hard-to-Remove GNN Watermarking via Topological Invariant Perception,10.48550/arxiv.2510.25934
+SZ0yQnALaW,StiCAS: Compositional Activation Steering via Stiefel Manifold Coordinate Transport,10.26187/deakin.33991519
+SgOj0VYeoD,Patching Up Circuit Learning on Images,10.48550/arxiv.2611.12436
+SnDDQz5O4F,AIRA-Compose: Agentic Discovery of Neural Architectures,10.48550/arxiv.2605.15871
+SoPlIu3TgX,Causal Discovery over Clusters of Variables with Latent Confounding,10.52202/085713-2904
+SxsberZw0W,VL-DocIR: A Benchmark for Vision-Based Long Document Retrieval,10.48550/arxiv.2610.17057
+T1VpyAm5Or,Emergent representations of graphical structure in mechanistic neural models of causal judgment,10.64898/2026.05.13.724819
+T9dHiOHpHI,GNES: Neural-Guided Evolutionary Program Search for Interpretable UAV Swarm Control,10.5281/zenodo.23769882
+T9dHiOHpHI,GNES: Neural-Guided Evolutionary Program Search for Interpretable UAV Swarm Control,10.5281/zenodo.23769883
+TAxfuYvzVo,Motion Forcing: Decoupling Ego and Object Motion via Sparse Inputs for Structured Video Generation,10.48550/arxiv.2603.10408
+TIAqMV9Kzf,Benchmarking Membership Privacy Risks in Preference-Based LLM Post-Training,10.60882/cispa.34944385
+TIAqMV9Kzf,Benchmarking Membership Privacy Risks in Preference-Based LLM Post-Training,10.60882/cispa.34944385.v1
+TXjUGPqJQu,Bayes-Optimal Balanced Error Rate and Area Under the Receiver Operating Characteristic Curve: Estimation and Evaluation of Estimators,10.48550/arxiv.2609.02304
+TpOx3zA846,SUPERVISE: A Unified Framework for Standardized and Reproducible Superpixel Evaluation,10.48550/arxiv.2611.27753
+Twe3Jz6Q0V,AgentKernelArena: Benchmarking Performance and Generalization of AI Coding Agents on GPU Kernels Optimization,10.48550/arxiv.2605.16819
+U6QZxi674V,LLM-enabled Applications Require Systematic Threat Monitoring,10.48550/arxiv.2602.19844
+UFTQ6XUIb3,Decomposing the modulation of interactions between neuronal populations,10.64898/2026.05.14.725145
+ULnWcFkFGp,RoutingBench: Can Evidence-Based Agentic Routing Analysis Scale to Production Networks?,10.48550/arxiv.2609.22848
+Uaf41CPesH,DataFlex: A Unified Benchmark and Evaluation Platform for Data-Centric Training of Large Language Models,10.48550/arxiv.2603.26164
+UlijzWpwGW,OS-Omni: A Cross-Platform Benchmark for Generalist Computer-Using Agents,10.48550/arxiv.2611.34232
+UmBkSWTw9t,A Confound-Controlled EEG Handwriting Dataset for Foundation Models,10.48550/arxiv.2605.15698
+UpWBgsC6IR,Measuring Layer-wise Intrinsic Dimensionality of FFNs in LLMs via PCA,10.48550/arxiv.2611.32782
+VBiAc0ibjz,SIGA: Scientific Simulation Coding Agent Adapter- A Geophysics Case Study,10.48550/arxiv.2606.09774
+VFeBuEITNa,Channel-wise Vector Quantization: Native 1D Visual Tokenization with Learnable Ordering,10.48550/arxiv.2605.26089
+VPM3iJ2XSl,Near-optimal Explainable $k$-means Clustering under $\ell_p$ Norm,10.48550/arxiv.2512.01150
+VZAGnyBRvm,Beyond Accuracy: A Diagnostic Benchmark for Hypothesis-Driven Experiment Planning in LLM Agents,10.48550/arxiv.2611.29467
+VsHXKYG0Sq,Spectral Adaptive Repositioning for Flow-Based Single-Cell Perturbation Modeling,10.64898/2026.11.02.763678
+W5vETfjQkH,IntegrityBench: Can LLMs Be Trusted as Co-Scientists? A Research Integrity Benchmark,10.48550/arxiv.2608.12345
+WJZTqX8nzZ,Iterative Nonlinear Computation Underlying Abstract Reasoning,10.48550/arxiv.2512.14693
+WSGT96IPb3,BACE: Behavior-Adaptive Connectivity Estimation from Multi-Region Neural Recordings,10.48550/arxiv.2510.20831
+WfyzQahi56,DrPO: Drifting Preference Optimization for One-Step Generative Models,10.48550/arxiv.2606.02521
+WifaN44w16,"On Differential Private $\ell_1$, $\ell_2$ and $\ell_p^p$ Distance Queries",10.48550/arxiv.2409.01688
+X66IYOVa2D,Unifying Partner and Environment Diversity to Improve Human-AI Coordination,10.48550/arxiv.2611.32031
+XAJBBFiTpE,BusemannFormer: Horospherical Self-Attention for Hyperbolic Graph Transformers,10.48550/arxiv.2611.27167
+XNzMICeQlD,The Graph Concept Bottleneck: Decoding Combinatorial Reasoning in GNNs for Interpretability,10.48550/arxiv.2603.02025
+XbNjlZYLho,PRISM: A Benchmark for Long-Horizon Programmatic Spatial Reasoning,10.48550/arxiv.2605.19382
+Xzigfjpz3Z,Adaptive Multi-view Graph Contrastive Learning via Fractional Continuous Dynamics,10.48550/arxiv.2511.06216
+YBJkwSJVbo,SOAP-Bubbles ◦❍ Structured Weight Uncertainty for Neural Networks,10.48550/arxiv.2606.23357
+YMMtTSpEEk,What Survival Benchmarks Don’t Tell You: Impact of Model Selection and Dataset Regimes,10.48550/arxiv.2611.24837
+YcWFCquBYo,Explanations over Graphs: An Agent Architecture for IT Enterprise Diagnostic Tasks,10.48550/arxiv.2601.17915
+Z1iGG61Tr4,BridgeMVS: Bridging Multi-View Stereo and Monodepth via Bidirectional Dynamic Fusion,10.48550/arxiv.2611.30787
+Z3QSYA86Ix,Transfer Entropy as a Measure of Information Flow in VLMs and LLMs,10.36227/techrxiv.176521368.84235550/v1
+Z4eWOG1BJ5,Harnessing Data Asymmetry in Manifold Learning,10.48550/arxiv.2603.11396
+Z5yR7ynhmJ,Pro-$t$-VaDE: Robust Prototype Discovery via Closed-Form Student-$t$ Variational Deep Embedding,10.48550/arxiv.2610.14894
+Z8Ogf2OPQp,Control Reinforcement Learning: Token-Level Mechanistic Analysis via Learned SAE Feature Steering,10.48550/arxiv.2602.10437
+ZBROlVYoFY,Distributionally-Robust Policy Learning from Observational Data,10.48550/arxiv.2610.25591
+ZEneX95jqf,Pareto Preference Optimization for Structure- and Stability-Aware RNA Inverse Folding,10.48550/arxiv.2510.21161
+ZI46yRLHVp,Learning Interpretable Switching Dynamics in Shared Neural-Behavioral Latent Space,10.64898/2026.10.02.756323
+ZKrEQSZqnM,Uniform Spectral Growth under Factor-wise Gradient Orthogonalization in Low-Rank Matrix Factorization,10.48550/arxiv.2602.06385
+ZZZah2bobp,Return to Basics: Very Simple Graph Contrastive Learning via Noise Cancellation Principle,10.48550/arxiv.2509.25742
+ZbkyZd1PpG,Generalization Measures for Deep Learning Should Be Audited for Fragility,10.48550/arxiv.2510.18934
+Zi8ymRxqfG,ConforFlux: Particle-Guided Trunk Repulsion for Diverse Protein Conformations,10.64898/2026.05.16.725138
+a9wmN45qso,"MGMem: An Efficient, Deterministic, and Provenance-Preserving Framework for Long-Horizon Agent Memory",10.48550/arxiv.2611.33174
+aBFHLIs9dX,ACER: Towards Generalizable Protein-ligand Co-folding,10.64898/2026.06.02.728568
+aFLMTsDeTk,When Does Fine-Tuning Extract Stored Knowledge? A Relation-Covering Theory for One-Layer Transformers,10.48550/arxiv.2508.00901
+acqj54vfk6,Optimized Minimal 4D Gaussian Splatting for Efficient Dynamic Scene Representation,10.48550/arxiv.2510.03857
+ahmoHHobId,Memorization Is Folding: Topological Signatures of Noisy-Label Learning,10.48550/arxiv.2610.23491
+amAQ0bvrH7,How New Reasoning Strategies Emerge in RL Post-Training: A Controlled Study,10.48550/arxiv.2607.07646
+aqIbhSL3JS,Prune to Protect: Faster Training and Enhanced Privacy by Dynamic Data Pruning,10.60882/cispa.32771721
+aqIbhSL3JS,Prune to Protect: Faster Training and Enhanced Privacy by Dynamic Data Pruning,10.60882/cispa.32771721.v1
+b3WKmq3X8i,DUST: Directional Uncertainty-aware and Scale-invariant Transfer Learning,10.48550/arxiv.2611.31948
+b8w3ugs7jR,FlashFFN: Multi-Head Decomposition Enables I/O-Aware Feed-Forward Network,10.48550/arxiv.2512.06989
+bAy37JhHLo,Communication-Efficient Federated Learning of Latent Patient Representations from Multi-Institutional EHRs,10.48550/arxiv.2611.27900
+bkKbLYspXv,OrangeTree: A Linear and Tree-based Time Series Forecasting Model Supporting Multiple Input and Output Lengths,10.48550/arxiv.2611.31905
+blZs0Iw2sU,MetaPI: Constructing Prompt Injection Benchmarks from Any Agent Benchmarks,10.48550/arxiv.2611.10026
+bqTe5C6VVH,Auditing Attention Head Masking for Out-of-Distribution Detection: Cross-Architecture Failures and Polarity Inversions,10.5281/zenodo.20281392
+bqTe5C6VVH,Auditing Attention Head Masking for Out-of-Distribution Detection: Cross-Architecture Failures and Polarity Inversions,10.5281/zenodo.20281393
+bqTe5C6VVH,Auditing Attention Head Masking for Out-of-Distribution Detection: Cross-Architecture Failures and Polarity Inversions,10.5281/zenodo.23763203
+bqTe5C6VVH,Auditing Attention Head Masking for Out-of-Distribution Detection: Cross-Architecture Failures and Polarity Inversions,10.5281/zenodo.24012227
+bqgwUpKHsr,AIR: Rethinking Image-Text Offset Alignment in Multimodal Contrastive Representation Space,10.48550/arxiv.2506.10895
+bqpIkP9Yfq,Exploring the Limits of Compositional Generalization in Embodied Manipulation,10.48550/arxiv.2610.15425
+bwvgAfue2A,Proper Agnostic Learning of Functions of Halfspaces,10.48550/arxiv.2605.27594
+c2Ny586AOf,Learning Global Probabilistic Explanations,10.48550/arxiv.2611.29493
+c49EUKrp1G,Attention Sinks Induce Gradient Sinks: Massive Activations as Gradient Regulators in Transformers,10.48550/arxiv.2603.17771
+c4U3xzPCvL,Signature-Kernel Evaluation Metrics for Robust Probabilistic and Tail-Event Forecasting,10.48550/arxiv.2602.10182
+c6eraD0tjd,SAFE-DRIFT: Data Selection for Supervised Fine-tuning with Controllable Off-Target Drifts,10.48550/arxiv.2611.28560
+c7yKlceZYq,Scaling Point-in-Time Language Models: Economic Evaluation of Embeddings,10.48550/arxiv.2607.11889
+c9GSAkKpkb,Do LLMs Learn from Rewards in Context? : Rethinking the role of reward in In-Context RL,10.48550/arxiv.2610.11152
+cFJUO84S9g,The Post-Training Dilemma: Why We Should Rethink the Sequential SFT-RL Paradigm,10.48550/arxiv.2601.07389
+co1yOG9PHM,Learning Planning Budgets in Real-Time RL,10.48550/arxiv.2606.26463
+csNiporPZm,Non-Expanding Gated Continued Fraction Architecture for Feedforward Layers in Language Models,10.48550/arxiv.2611.26835
+cvTtwanpui,SGNNBench: A Holistic Evaluation of Spiking Graph Neural Networks on Large-scale Graphs,10.48550/arxiv.2509.21342
+d1T390yy1T,Cost-Aware SGD: Theory and Applications to LLM Policy Optimization,10.48550/arxiv.2604.28020
+d7gqN6IVHL,Attention-Based Soft Answer Sets,10.48550/arxiv.2603.18436
+dOkgsUfJSn,Refactoring Code Through Library Design,10.48550/arxiv.2506.11058
+dSWBIbUTbe,GT-Free OCR Metrics: A Reference-Free Evaluation Framework for Document OCR Systems,10.5281/zenodo.20017973
+dSWBIbUTbe,GT-Free OCR Metrics: A Reference-Free Evaluation Framework for Document OCR Systems,10.5281/zenodo.20017974
+dSWBIbUTbe,GT-Free OCR Metrics: A Reference-Free Evaluation Framework for Document OCR Systems,10.5281/zenodo.20070291
+dfK9DJR2XH,Hierarchical Adaptive Frame Sampling For Video Understanding,10.48550/arxiv.2611.34544
+dwDo02oHXs,Consolidating Reasoning with Test-Time Learning,10.48550/arxiv.2611.02104
+eGVue7g2tp,RoMo Hands: A Large Scale Richly Organized Text to Hand Motion Dataset,10.48550/arxiv.2611.31766
+eKLNopOeto,MutQA: A Cross-Validated Q&A Dataset for Genetic Mutations,10.64898/2026.10.27.762236
+eTYGRodQ9x,Energy-Adaptive Equivariant State Space Models for Noise-Robust Protein Structure Representation,10.48550/arxiv.2503.16996
+em7XpU5sBc,SVDP: Training-Free Contextual Sparsity Predictors for Fast LLM Inference,10.48550/arxiv.2603.14110
+ev5gqvsLa0,EngramState: Loadable Tool Priors for Efficient Function Calling,10.5626/jok.2026.53.9.817
+evwl9c0pUM,GoT: A Game-Theoretic Approach to the Game of Twenty Questions,10.48550/arxiv.2602.01708
+fAXSAH3loo,Concept-Based Mechanistic Interpretability Needs a Concrete Evaluation Paradigm,10.5281/zenodo.20444130
+fAXSAH3loo,Concept-Based Mechanistic Interpretability Needs a Concrete Evaluation Paradigm,10.5281/zenodo.20444131
+fAXSAH3loo,Concept-Based Mechanistic Interpretability Needs a Concrete Evaluation Paradigm,10.5281/zenodo.24155047
+fHTKWgRoZq,FrequencyBooster: Advancing Pixel Diffusion for High-Fidelity Image Generation,10.48550/arxiv.2605.17759
+fKMJIDNPRC,How does feature learning change the function space evolution?,10.48550/arxiv.2605.17718
+fKr07Pdg6F,HandXFM: Semantic-Structural Distillation for Hand Radiograph Foundation Models,10.48550/arxiv.2611.28283
+fMUyPAggFz,Ensuring Deployment-Time Safety of Neural Network Controlled Systems via Localized Certificate Repair,10.48550/arxiv.2611.33813
+fhaa8MaD9I,Visual Robustness and Neural Alignment in a Shared Foraging Task: The Mouse vs. AI Benchmark,10.48550/arxiv.2509.14446
+flE9vNlBYl,Breadcrumbing Search Agents: Per-Turn Scheming Over Long-Horizon Trajectories,10.48550/arxiv.2608.04565
+gQsgSLZBj4,Screening Lipid Nanoparticles through Structure-Ratio Alignment,10.64898/2026.07.08.737142
+gnKli42BZO,BReD: Block Replay Dithering for Stable Low-Bit EMA Optimizer States,10.48550/arxiv.2611.33951
+gy1X23GoMB,Skill-Adaptive Noise Scheduling for Diffusion Policies,10.48550/arxiv.2611.30264
+h673LAeDNM,Neural Optimal Transport in Hilbert Spaces,10.48550/arxiv.2602.14086
+hEJF4xVLvo,Automated Causal Effect Estimation through Self-Evolving AI,10.48550/arxiv.2604.04274
+hNvgA94KTi,Epistemic Social Learning: Latent Behavioral Structure under Endogenous Multi-Agent Interaction,10.48550/arxiv.2611.27545
+hXNx575zFR,Frontier-Eng: Benchmarking Self-Evolving Agents on Real-World Engineering with Generative Optimization,10.48550/arxiv.2604.12290
+hY4qGi3waD,Large language models suffer from a curse of ambiguity,10.48550/arxiv.2608.15448
+iGWauw47NW,ApodexEval: Benchmarking Multimodal Deep Research Agents in Process and Outcome,10.48550/arxiv.2603.28407
+iWKda5S9fT,A$^3$Bench: Compositional Reasoning over Aggressive Interactions in Videos,10.48550/arxiv.2611.24762
+iXZzj7en1J,Large Language Model Failures from Hallucination to Homogenization Are Different Facets of Miscalibration,10.36227/techrxiv.177130685.57616643/v1
+iXZzj7en1J,Large Language Model Failures from Hallucination to Homogenization Are Different Facets of Miscalibration,10.5281/zenodo.18499743
+iXZzj7en1J,Large Language Model Failures from Hallucination to Homogenization Are Different Facets of Miscalibration,10.5281/zenodo.18499744
+iXZzj7en1J,Large Language Model Failures from Hallucination to Homogenization Are Different Facets of Miscalibration,10.5281/zenodo.24054261
+icSHR3O8rl,FalconPerception-HD: High Density Perception via Reinforcement Learning,10.48550/arxiv.2608.18881
+idhb10oUCK,Guiding Diffusion Language Models with Denoising Entropy,10.48550/arxiv.2512.21336
+if6zG3AZ0k,Scalable and Synthesizable DNA Library Design via Reinforcement Learning,10.64898/2026.07.07.736931
+igJU8aUjWw,Understanding Double Descent through Universal Compression,10.48550/arxiv.2611.33759
+iq83tsXsBG,LLM–GNN Co-Teaching for Few-Shot Graph Learning,10.48550/arxiv.2606.11583
+iqBkP1UEL0,Extraneous Cognitive Load in Large Language Models,10.48550/arxiv.2611.33197
+ixQvsT5Hku,When to Trust a PFN: Detecting Harmful Shift in Tabular Foundation Models,10.48550/arxiv.2611.34767
+izyPP7UWKU,Prompt Driven Exploration: Language as an Exploration Space for VLA Reinforcement Learning,10.48550/arxiv.2607.08837
+j0w8m1D6QO,Cardinality-Decomposed Loss for Heterogeneous GNNs,10.48550/arxiv.2607.20737
+j7lOiPUk8m,Temporal Selective Exploration for Reinforcement Learning-Guided Continuous-Discrete Flow Matching in 3D Molecular Design,10.48550/arxiv.2611.33417
+jJKsS0Cmjn,Affine-Image Propagation for Tight and Scalable Neural Network Verification,10.48550/arxiv.2611.26978
+jPnZFyHo4X,Treat Bias as Noise: Training Bias-Robust LLM Reasoning via Reinforcement Learning,10.48550/arxiv.2602.01528
+jp8UqwXlAw,Inductive Deductive Synthesis: Co-Evolving Code-and-Proof Generation,10.48550/arxiv.2605.23109
+jqQXTnJOCO,Neural Fractional Stochastic Differential Equations,10.2139/ssrn.5753542
+jqSgr9lIkj,Learning to Commit: Next-Commit Prediction via Online Supervised Contrastive Reflection,10.48550/arxiv.2603.26664
+jzwe0bK0ce,Beyond MNIST: Limitations of Amplitude Encoding on Quantum Classification,10.48550/arxiv.2503.01545
+kG41FPloKc,Topology-Aware Optimal Transport for Source-Free Test-Time Adaptation in Anomaly Segmentation,10.48550/arxiv.2601.20333
+kS90WnGV9B,Contrastive Adversarial Training for Robust Graph Neural Networks under Label Poisoning,10.48550/arxiv.2610.24685
+kX9Kbog4s6,Revisiting Continual Learning in Language Models: A Three-Interface Diagnosis of Stability and Plasticity,10.48550/arxiv.2611.30151
+kXgdaUrvBN,"Finetuning with Sampling: Make SFT Generalize, Not Forget",10.48550/arxiv.2610.02140
+kXu9l8Thvx,Fairness in limited resource prediction-driven decisions,10.48550/arxiv.2602.23026
+krhi01CVlP,Neuromodulated Constrained Autoencoders for Context-Dependent Manifold Learning,10.48550/arxiv.2603.11673
+kxtifbesla,ClinMAS: A Knowledge-Grounded Multi-Agent Simulation Framework for Evaluating Clinical Reasoning in LLMs,10.48550/arxiv.2512.23440
+lLZbYegc4T,VeriWorld: A Verifiable Visual SWE-Bench for Spatial Reasoning in 3D Environments,10.48550/arxiv.2611.30226
+lPOkD4q1Gx,JEPAWG: Interpretable Hypernetworks for Weight-Space Physics,10.48550/arxiv.2607.07127
+lU1kNLfVEL,Lost on Campus: Evaluating Embodied Spatial Reasoning of Vision-Language Models in the Wild,10.48550/arxiv.2611.33145
+lhhOfpsgc5,Static-Dynamic Disentanglement for Efficient Multi-Frame Vision-Language-Action Models,10.48550/arxiv.2602.03983
+liIfv8zuj1,Rethinking Sequential Locate-Then-Edit: Optimality and Stability,10.48550/arxiv.2611.33692
+lj2lMy4avH,Epistemic Infrastructures of Science in AI Era Should Rebalance Costs of Generation and Verification,10.48550/arxiv.2605.10425
+lu0GI2GKoK,SAPO: Step-Level Skill-Augmented Policy Optimization for Multi-Turn LLM Agents,10.48550/arxiv.2603.18079
+m0BAYdzjal,Unified Multi-Stage Flow Matching via Conditional Dependent Coupling,10.48550/arxiv.2509.23122
+mF8mCetv02,Local Policy Manifolds for Efficient Multi-Objective Reinforcement Learning,10.48550/arxiv.2506.04022
+mFaRwEs0bN,Causal Bias Detection in Generative Artifical Intelligence,10.48550/arxiv.2605.11365
+mHqLsJydRH,Efficient and Robust Physical 3DGS-MPM Simulation via Interior Filling and Text-Physics Optimization,10.48550/arxiv.2602.01723
+mMGBM26aqy,IADR: Interface-Augmented Neural Operator for Phase-Field Mean-Curvature Flow,10.48550/arxiv.2611.30153
+mSu3YzwW3t,CM-EVS: Sparse Panoramic RGB-D-Pose Data for Coverage-Oriented Scene Observation,10.48550/arxiv.2605.15597
+mVsJcNjcSu,Bayesian Agents Learning from Expert Outcomes,10.48550/arxiv.2510.08113
+mXUs8DCmoQ,Seeing the Unseen: Unified Visible–Invisible Motion for Physically Consistent Video Generation,10.48550/arxiv.2611.00293
+mZD68mJapq,How Much Evidence Should Retrieval-Augmented In-Context Learning Use Under Distribution Shift?,10.5281/zenodo.23770008
+mZD68mJapq,How Much Evidence Should Retrieval-Augmented In-Context Learning Use Under Distribution Shift?,10.5281/zenodo.23770009
+miKyDlYKQ0,Large Language Model Selection with Limited Annotations,10.48550/arxiv.2510.09418
+miKyDlYKQ0,Large Language Model Selection with Limited Annotations,10.48550/arxiv.2605.24981
+midyPx9DqU,Graph Topology Augmentation for Prioritized Sweeping in Non-stationary Reinforcement Learning,10.48550/arxiv.2609.06186
+mwnXqnBf8n,FoundSurface: Feedforward Ray-Based 3D Scene Surface Reconstruction from Unposed Images,10.48550/arxiv.2611.34128
+n9Wa5CFzZ3,Value-Based Pre-Training With Downstream Feedback: Meta-Learn Your Pre-Training Objectives,10.48550/arxiv.2601.22108
+nKVmBxaagL,Casper: A Projection-Based Neurosymbolic Layer for Scalable & Guaranteed Constraint Satisfaction,10.48550/arxiv.2611.33527
+nl4FBxtsew,xWhy: Causal Interactive Learning,10.48550/arxiv.2609.26037
+nsoesUF2ic,ShadowTransfer: A Geographic Transfer Benchmark for Overhead Shadow Detection,10.48550/arxiv.2611.24904
+nuKJ3hRX5i,FoldAbS: Repurposing the Protein Folding Model as a Foundation Encoder for Antibody Screening,10.64898/2026.11.03.763899
+oCkr3KnHhU,A Benchmark and Agentic Framework for Omni-Modal Reasoning in Long Videos,10.48550/arxiv.2512.16978
+ovNLRgukle,Q-learning with Coupled Reward Machines for Unordered Tasks,10.48550/arxiv.2510.27329
+pTmL4oUWre,Relevance Is Not Necessity: Selecting the Necessary API Set for Tool-Using LLMs,10.5281/zenodo.23770098
+pTmL4oUWre,Relevance Is Not Necessity: Selecting the Necessary API Set for Tool-Using LLMs,10.5281/zenodo.23770099
+pWkCETOQnA,SFT-then-RL Matches or Outperforms Mixed-Policy Methods for LLM Math Reasoning,10.48550/arxiv.2604.23747
+pXYWXZE3QV,Parasite Features: Causal Abstraction Through Spurious Pathways,10.48550/arxiv.2611.26711
+psDmvTWpNt,Optimal Linear Regression Without a Variance,10.48550/arxiv.2611.27983
+pw4nMbt6SR,ControlJEPA: Principled Trajectory Regularization via Lyapunov Tube Loss,10.48550/arxiv.2610.24951
+q4Gs05xKgs,Follow-Bench 2.0: An End-to-End 3D Benchmark for Socially-Aware Robot Person Following,10.48550/arxiv.2611.32579
+q7e6qi0tQK,DynaSub: Adaptive Subgrouping for Scalable Representation Learning,10.48550/arxiv.2506.10200
+qBuOrD12Mv,Precise Debugging Benchmark: Is Your LLM Debugging or Regenerating Code?,10.48550/arxiv.2604.17338
+qpBXkIWHNU,AgriManager: A Framework and Benchmark for LLM-RL Generalization in Agricultural Management,10.48550/arxiv.2611.28844
+r4Nd67ZClj,ContinuLoc: Continuous Pose Inference over Neural Fields for UAV Geo-Localization,10.48550/arxiv.2611.29276
+ra80Jaw38j,Deployment-Memory LLM Test-Time Training Should Require Behavioral Evidence Beyond Perplexity,10.48550/arxiv.2607.00368
+ray5fCkxmm,A Latent World-Action Model with Jointly Aligned Reasoning,10.48550/arxiv.2605.00078
+rdn1a8ZKqW,Code Review Bench: An Automated Benchmark for Evaluating the Software Factory,10.48550/arxiv.2611.26942
+rjusfdj0um,"Transferable, Time-Parallel Graph Dynamics via Space-Time Factorization",10.48550/arxiv.2611.31479
+rmeEtbylhS,Robust and Scalable Collaborative Learning via Pull-Based Epidemic Communication,10.48550/arxiv.2510.08311
+s3K6o5xMfu,Streaming Interventions: Can Video LLMs Correct Mistakes as They Occur?,10.48550/arxiv.2606.09547
+sMHHHiNe0M,Uncovering Hidden Propensities in Language Models via Limited-Parameter Finetuning,10.48550/arxiv.2611.30672
+sRJQgUFr36,Frequency-Structured Hamiltonian Neural Network for Multi-Timescale Dynamics,10.48550/arxiv.2603.06354
+sZ9wFqGDVd,Detecting Outdated Knowledge in Large Language Models,10.48550/arxiv.2605.09195
+suBjj8xrz2,FakeParts: a New Family of AI-Generated Video Forgeries,10.48550/arxiv.2508.21052
+tFbXG1BkAG,Toward Cognitive Supersensing in Multimodal Large Language Models,10.48550/arxiv.2602.01541
+tKFBJFZMma,Auxiliary Clues Aware’s Geometry Problem Solving,10.48550/arxiv.2611.30617
+tNrFDjV59O,"InfiniteVL: A Systematic Approach to Highly-Efficient, Ultra-Long Multimodal Understanding",10.48550/arxiv.2512.08829
+tRze0atkNs,Subdata Selection: A Unified Framework for Optimal Selection and Statistical Efficiency Assessment,10.48550/arxiv.2604.23930
+tVpWLU3dKH,Sign-Based Optimizers Under Heavy-Tailed Noise: On the Effectiveness of Lion and Muon,10.48550/arxiv.2602.07425
+tgSNcsvbz9,"Learning to play with spikes. Characterizing, predicting, and engineering unsupervised plasticity rules for spiking reservoir computing",10.64898/2026.09.15.751573
+tl0ouNjqqZ,Similarity-Constrained Reweighting for Complex Query Answering on Knowledge Graphs,10.48550/arxiv.2611.29596
+uHPdTAgha6,Recovering the Apresjan Hierarchy Using Linkage-Based Clustering,10.48550/arxiv.2511.18056
+uOO0f4pq0o,EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models,10.48550/arxiv.2610.25959
+uWsmvC2jq5,Hybrid Neural World Models for Physical Dynamics,10.48550/arxiv.2605.28317
+ucjCOJf47M,The Complexity Kink: LLM Rubric Instruments for Causal Inference on Code Generation Reliability,10.48550/arxiv.2609.19616
+udwqYC27uV,An Empirical Study of the Geometry and Latent-Space Composition of Hypernetwork-Generated LoRAs,10.48550/arxiv.2611.33048
+uiqGz0UDET,Surjective Pseudo-Invertible Neural Networks,10.48550/arxiv.2602.06042
+upDTyHCLSr,StereoPep: Predicting the Effects of Stereochemical Inversions on Synthetic Peptide Retention Time in Combinatorial Libraries,10.26434/chemrxiv.15003812/v1
+uw0STVeH8D,gHAWK: Structural Encoding for Scalable Training of Graph Neural Networks on Knowledge Graphs,10.48550/arxiv.2512.08274
+v1KHSSdzcM,Brain2voice 2.0: High-performance voice synthesis brain-computer interface,10.64898/2026.06.30.735633
+v2oaVIPUYs,LinuxArena: A Control Setting for AI Agents in Live Multi-Service Software Environments,10.48550/arxiv.2604.15384
+v48Q9Nsxcw,Social Interaction Breaks Replicate Independence in Controlled-Clone LLM Agents,10.48550/arxiv.2611.29581
+vAPXuhpYYw,ChartArena: A Unified Benchmark with Atomic-Primitive Reasoning for Chart Parsing,10.48550/arxiv.2606.01348
+vCft9tPVmL,MT-CC: Multi-Group Temperature Scaling for Asymmetric Calibration Behavior in Class-Incremental Learning,10.48550/arxiv.2610.25689
+vH1EUKvrHt,TabK: Amortized Bayesian Estimation of the Number of Clusters in Tabular Data,10.48550/arxiv.2611.28335
+vLeZitFeKS,Effect-Driven Skill Abstractions for Offline Reinforcement Learning,10.48550/arxiv.2611.33229
+vUqsQ4aoDb,EVA: Evidence-seeking Visual Agent for Hallucination-Resistant Multimodal Reasoning,10.48550/arxiv.2611.33706
+vdvW81Wcy2,Hybrid Reinforcement Learning for One-step Degraded Infrared and Visible Image Fusion,10.48550/arxiv.2611.33857
+w0Ou0Qeg5H,Safe Quantum Stochastic Linear Bandits,10.48550/arxiv.2611.29904
+w3aoxSAAcH,Reset Dependence Is Embodied: Training Protocol Changes Which Morphologies Appear Optimal,10.48550/arxiv.2611.29518
+wVWF5MK9yv,Recovering Evolving User Preference State via Adaptive Interaction-aware Representation Correction,10.48550/arxiv.2610.01270
+x1uym9PA9I,Risks Make LLM Productivity Frontier Doubly Jagged,10.2139/ssrn.6381580
+xZm0LvUahe,A Systematic Analysis of Out-of-Distribution Detection Under Representation and Training Paradigm Shifts,10.48550/arxiv.2511.11934
+xfHw2Qn1GR,Towards Pareto Optimality in Popularity Debiasing for Generative Recommender Systems,10.48550/arxiv.2605.16825
+xjwxcKVFWO,"Seeing Together, Acting Apart: Shared Environmental Understanding for Multi-Robot Navigation",10.48550/arxiv.2611.30310
+xpGyDKUODu,Near-Optimal Affine-Equivariant Robust Mean Estimation,10.48550/arxiv.2310.10758
+y1PstYDXDq,Rethinking XAI Evaluation: A Human-Centered Audit of Shapley Benchmarks in Tabular Risk Settings,10.48550/arxiv.2604.22662
+y6tEsjJnyb,"MyoChallenge 2025: Benchmark Design, Competition Results, and Lessons for Human Athletic Intelligence",10.48550/arxiv.2605.15650
+yDPx5pQqmV,ProPolar: Progressive Polar Decomposition for Implicit Neural Representations,10.48550/arxiv.2611.33567
+yKrnpC8dOT,Contextualized Evaluation of Vision Language Models through Dynamic Interviews,10.48550/arxiv.2607.14499
+yLF8wQre6o,PIU-CR: Physics-Informed Deep Unfolding Network with SAR-Optical Image Fusion for Cloud Removal,10.48550/arxiv.2611.27093
+yWIThDZBX3,Deconvolution and Denoising via Maximum Mean Discrepancy,10.48550/arxiv.2606.21907
+yYJYksvTw5,"Medical AI Must Be an AI Colleague, Not an Oracle",10.48550/arxiv.2509.17334
+yYvDH6yl2q,Mitigating Overgeneralization in RND via Spectral Target Design,10.48550/arxiv.2611.33850
+yeWQkz9wHH,BuresTomFlow: Bures-Geometric Flow Matching for Posterior Quantum Tomography,10.20944/preprints202611.1144.v1
+yglphSefi0,Felid: A Flexible and Efficient Design for Transformer Fine-Tuning over Encrypted Data,10.48550/arxiv.2611.27175
+yp203lXtpK,CyberDualEval: Measuring Dual-Use Cyber Risks in Frontier Language Models,10.48550/arxiv.2611.30533
+zcxTKrFsxv,DisSparse: Pipelined Top-$p$ Sparse Attention for Long-Context LLM Serving,10.48550/arxiv.2611.28522
+zhiBScUBHH,Think about how AIs think about themselves,10.48550/arxiv.2603.11353
+zhyLVCaMI0,ThinkMorph-SSL: Scaling Interleaved Multimodal Reasoning with Pretext Tasks,10.48550/arxiv.2611.32183
+zjAVLNtSaV,On the Information Loss of Multi-Token Prediction: Origin and Solution,10.48550/arxiv.2611.31966
+zrt8lyUHkP,CausalAffect: Causally Guided Learning of Psychology-Aligned Facial Affect Relations,10.48550/arxiv.2512.00456

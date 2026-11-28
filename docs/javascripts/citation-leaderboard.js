@@ -177,7 +177,7 @@
     var link = document.createElement("a");
     link.className = "cl-paper-title";
     link.href = noteHref(notes[0] || paper.notes[0]);
-    link.textContent = paper.title;
+    link.textContent = (notes[0] || paper.notes[0]).title || paper.title;
     cell.appendChild(link);
 
     var meta = document.createElement("div");
@@ -443,7 +443,7 @@
             " " +
             notes
               .map(function (note) {
-                return note.conference + " " + prettyArea(note.area);
+                return (note.title || "") + " " + note.conference + " " + prettyArea(note.area);
               })
               .join(" ")
         );

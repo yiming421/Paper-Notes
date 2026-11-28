@@ -43,6 +43,14 @@ class CitationLeaderboardTests(unittest.TestCase):
         self.assertEqual(len(rows), 3)
         self.assertEqual([row["arxiv"] for row in rows], ["2605.11111", "", ""])
 
+    def test_verified_version_is_retained_until_conference_title_changes(self):
+        note = leaderboard.Note("paper", "New title", "new title", "NeurIPS2026", "others", 2026, ())
+        match = {"title_key": note.title_key, "paper_id": "verified", "match_method": "reviewed_version"}
+        kwargs = {"today": dt.date(2026, 11, 28), "retry_after_days": 30}
+        self.assertFalse(leaderboard.should_search_title(note, match, **kwargs))
+        match["title_key"] = "previous title"
+        self.assertTrue(leaderboard.should_search_title(note, match, **kwargs))
+
     def test_title_budget_prioritizes_untried_papers_and_preserves_id_check(self):
         class Missing:
             def match_title(self, title, year):
@@ -77,6 +85,28 @@ class CitationLeaderboardTests(unittest.TestCase):
         self.assertEqual(note.conference, "NeurIPS2026")
         self.assertEqual(note.url, "https://openreview.net/forum?id=abc1234567")
         self.assertEqual(note.dois, ("10.48550/arxiv.2605.11111",))
+
+    def test_verified_doi_is_retried_only_for_its_conference_paper(self):
+        from import_neurips2026 import apply_verified_arxiv
+        with tempfile.TemporaryDirectory() as temporary:
+            docs = Path(temporary)
+            directory = docs / "assets" / "data"
+            directory.mkdir(parents=True)
+            (directory / "neurips2026.csv").write_text(
+                "forum,title,area,arxiv\nabc1234567,Current title,others,\n", encoding="utf-8"
+            )
+            (directory / "neurips2026-versions.csv").write_text(
+                "forum,title,doi\nabc1234567,Current title,10.1234/current\n"
+                "abc1234567,Current title,10.48550/arxiv.2611.12345\n"
+                "abc1234567,Different title,10.1234/unrelated\n", encoding="utf-8"
+            )
+            note, = leaderboard.scan_notes(docs)
+            versions = leaderboard.load_neurips_versions(directory)
+        self.assertEqual(note.dois, ("10.1234/current", "10.48550/arxiv.2611.12345"))
+        row = {"forum": "abc1234567", "title": "Current title", "arxiv": ""}
+        apply_verified_arxiv([row], versions)
+        self.assertEqual(row["arxiv"], "2611.12345")
+        self.assertEqual(row["arxiv_source"], "version_verified")
 
     def test_scan_note_extracts_title_and_identifiers(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -324,8 +354,9 @@ title: metadata title
             ),
             leaderboard.Note(
                 path="CVPR2025/area_b/paper.md",
-                title="One Paper",
-                title_key="one paper",
+                title="Conference version title",
+                title_key="conference version title",
+                external_url="https://openreview.net/forum?id=abc1234567",
                 conference="CVPR2025",
                 area="area_b",
                 conference_year=2025,
@@ -365,6 +396,8 @@ title: metadata title
         self.assertEqual(data["papers"][0]["influential_citations"], 4)
         self.assertEqual(data["total_influential_citations"], 4)
         self.assertEqual(len(data["papers"][0]["notes"]), 2)
+        self.assertEqual(data["papers"][0]["title"], "One Paper")
+        self.assertEqual(data["papers"][0]["notes"][1]["title"], "Conference version title")
         self.assertEqual(json.loads(leaderboard.render_public_data(data))["version"], 2)
 
 

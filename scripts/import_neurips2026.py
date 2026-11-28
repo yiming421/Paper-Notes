@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 from urllib.parse import parse_qs, urlsplit
 
-from update_citation_leaderboard import normalize_title
+from update_citation_leaderboard import load_neurips_versions, normalize_title
 
 GROUP = "https://openreview.net/group?id=NeurIPS.cc/2026/"
 TRACKS = {
@@ -97,6 +97,18 @@ def enrich_from_arxiv(rows, events, parquet):
             row["arxiv_source"] = "arxiv_title_author"
 
 
+def apply_verified_arxiv(rows, versions):
+    prefix = "10.48550/arxiv."
+    for row in rows:
+        if row["arxiv"]:
+            continue
+        dois = versions.get((row["forum"], normalize_title(row["title"])), ())
+        ids = {doi[len(prefix):] for doi in dois if doi.startswith(prefix)}
+        if len(ids) == 1:
+            row["arxiv"] = ids.pop()
+            row["arxiv_source"] = "version_verified"
+
+
 if __name__ == "__main__":
     import pyarrow.parquet as pq
 
@@ -113,6 +125,7 @@ if __name__ == "__main__":
     rows = build_catalog(program["results"], metadata)
     if args.arxiv_metadata:
         enrich_from_arxiv(rows, program["results"], pq.ParquetFile(args.arxiv_metadata))
+    apply_verified_arxiv(rows, load_neurips_versions(args.output.parent))
     with args.output.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
