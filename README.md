@@ -1,10 +1,10 @@
-# CiteAtlas · AI 论文引用榜
+# AI 论文引用榜
 
-CiteAtlas 按 Semantic Scholar 引用数整理 AI 会议论文。首页聚焦 NeurIPS 2026，展示引用分布、收录覆盖率和引用前五名。完整榜支持跨会议比较，可按年份、领域和论文题名筛选，也能按高影响力引用排序。
+本榜按 Semantic Scholar 引用数整理 AI 会议论文。首页聚焦 NeurIPS 2026，展示引用分布、收录覆盖率和引用前五名。完整榜支持跨会议比较，可按年份、领域和论文题名筛选，也能按高影响力引用排序。
 
-**[打开 CiteAtlas](https://yiming421.github.io/Paper-Notes/)**　·　[NeurIPS 2026 排名](https://yiming421.github.io/Paper-Notes/leaderboard/?conference=NeurIPS&year=2026)　·　[全部会议](https://yiming421.github.io/Paper-Notes/leaderboard/)
+**[打开排行榜](https://yiming421.github.io/Paper-Notes/)**　·　[NeurIPS 2026 排名](https://yiming421.github.io/Paper-Notes/leaderboard/?conference=NeurIPS&year=2026)　·　[全部会议](https://yiming421.github.io/Paper-Notes/leaderboard/)
 
-[![CiteAtlas 的 NeurIPS 2026 专题首页预览](docs/assets/citeatlas-overview.webp)](https://yiming421.github.io/Paper-Notes/)
+[![NeurIPS 2026 专题首页预览](docs/assets/citeatlas-overview.webp)](https://yiming421.github.io/Paper-Notes/)
 
 ## NeurIPS 2026
 
@@ -22,4 +22,4 @@ CiteAtlas 按 Semantic Scholar 引用数整理 AI 会议论文。首页聚焦 Ne
 
 ## 来源与许可
 
-本项目 fork 自 [zhaoyang97 / Paper Notes](https://github.com/zhaoyang97/Paper-Notes)，沿用其论文笔记与分类。CiteAtlas 增加了引用匹配、NeurIPS 2026 会场目录和独立的排行榜界面。笔记原作者为 zhaoyang97，沿用 [CC BY-NC-SA 4.0](LICENSE)。会议元数据来自 [NeurIPS](https://neurips.cc/Downloads/2026)，引用数据来自 [Semantic Scholar](https://www.semanticscholar.org/)。
+本项目 fork 自 [zhaoyang97 / Paper Notes](https://github.com/zhaoyang97/Paper-Notes)，沿用其论文笔记与分类。本项目增加了引用匹配、NeurIPS 2026 会场目录和独立的排行榜界面。笔记原作者为 zhaoyang97，沿用 [CC BY-NC-SA 4.0](LICENSE)。会议元数据来自 [NeurIPS](https://neurips.cc/Downloads/2026)，引用数据来自 [Semantic Scholar](https://www.semanticscholar.org/)。

@@ -1,5 +1,5 @@
 ---
-title: 论文排名 · CiteAtlas
+title: 论文排名 · AI 论文引用榜
 description: 按会议、年份、领域或题名筛选论文，查看 Semantic Scholar 总引用和高影响力引用。
 template: citation-atlas.html
 search:

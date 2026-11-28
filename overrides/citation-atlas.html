@@ -25,7 +25,7 @@
 <a class="skip" href="#main">跳至主要内容</a>
 <header class="mast">
   <div class="wrap navline">
-    <a class="brand" href="{{ './' if home else '../' }}" aria-label="CiteAtlas 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>CiteAtlas</a>
+    <a class="brand" href="{{ './' if home else '../' }}" aria-label="AI 论文引用榜 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>AI 论文引用榜</a>
     <nav aria-label="主导航">
       <a href="{{ './' if home else '../' }}"{% if home %} aria-current="page"{% endif %}>总览</a>
       <a href="{{ board }}"{% if not home %} aria-current="page"{% endif %}>完整排名</a>
@@ -73,12 +73,12 @@
  </aside>
 </div>
 <section class="method" id="method" aria-labelledby="method-title">
-  <div><p class="eyebrow ink">CiteAtlas</p><h2 id="method-title">这份榜单怎么读？</h2><a class="inline" href="{{ board }}">浏览全部会议排名 ↗</a></div>
-  <div class="method-text"><p>CiteAtlas 每周更新 AI 会议论文的公开引用记录。我们按 Semantic Scholar 论文 ID 去重，既可比较总引用，也可查看该索引标记的高影响力引用。</p>
+  <div><h2 id="method-title">这份榜单怎么读？</h2><a class="inline" href="{{ board }}">浏览全部会议排名 ↗</a></div>
+  <div class="method-text"><p>榜单每周更新 AI 会议论文的公开引用记录。我们按 Semantic Scholar 论文 ID 去重，既可比较总引用，也可查看该索引标记的高影响力引用。</p>
   <p>NeurIPS 2026 采用会场录用年份。遇到预印本改名，我们交叉核对作者、摘要、旧题名与项目页。匹配率以完整录用目录为分母。已匹配且引用数为 0 的论文正常入榜，尚未核实的论文保留在目录中。</p></div>
 </section>
 {% else %}
-<div class="board-heading"><div><p class="eyebrow ink"><span class="rule"></span> CiteAtlas</p><h1 id="ranking-title">论文引用排名</h1><p>按会议、年份或研究领域定位论文，比较 Semantic Scholar 引用记录。</p></div>
+<div class="board-heading"><div><p class="eyebrow ink"><span class="rule"></span> AI 论文引用榜</p><h1 id="ranking-title">论文引用排名</h1><p>按会议、年份或研究领域定位论文，比较 Semantic Scholar 引用记录。</p></div>
 <a class="edition-link" data-edition-url="{{ edition }}" data-overview-url="../" href="{{ edition }}">NeurIPS 2026 专题排名 ↗</a></div>
 <div class="board-info"><span>全站收录 <b data-cl-stat="works">{{ '{:,}'.format(atlas.works) }}</b> 篇已匹配论文</span><span>更新于 <time data-cl-stat="updated">{{ atlas.date }}</time></span></div>
 <form class="filters" aria-label="筛选论文" onsubmit="return false">
@@ -96,5 +96,5 @@
 <noscript>完整交互排名需要 JavaScript。可直接<a href="{{ fullcsv }}">下载 NeurIPS 2026 目录</a>。</noscript>
 {% endif %}
 </div></main>
-<footer><div class="wrap foot"><div><b>CiteAtlas</b><span>AI 论文引用榜</span></div><p>论文笔记与分类源自 <a href="https://github.com/zhaoyang97/Paper-Notes">Paper Notes</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><br>引用数据来自 <a href="https://www.semanticscholar.org/">Semantic Scholar</a></p></div></footer>
+<footer><div class="wrap foot"><div><b>AI 论文引用榜</b></div><p>论文笔记与分类源自 <a href="https://github.com/zhaoyang97/Paper-Notes">Paper Notes</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><br>引用数据来自 <a href="https://www.semanticscholar.org/">Semantic Scholar</a></p></div></footer>
 </body></html>

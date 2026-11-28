@@ -1,4 +1,4 @@
-/* CiteAtlas conference overview and searchable citation rankings. */
+/* AI 论文引用榜 conference overview and searchable citation rankings. */
 (function () {
   "use strict";
 
@@ -590,7 +590,7 @@
     }).catch(function (error) {
       var status = root.querySelector("#cl-status");
       if (status) status.textContent = "引用数据加载失败，请刷新页面重试。";
-      if (window.console) console.error("CiteAtlas:", error);
+      if (window.console) console.error("AI 论文引用榜:", error);
     });
   }
 
