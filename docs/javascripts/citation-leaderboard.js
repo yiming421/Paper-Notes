@@ -159,6 +159,7 @@
   }
 
   function noteHref(note) {
+    if (/^https:\/\/openreview\.net\/forum\?id=[\w-]{10}$/.test(note.path)) return note.path;
     return new URL("../" + note.path.replace(/^\/+/, ""), location.href).href;
   }
 
@@ -188,7 +189,7 @@
     }
     if (paper.notes.length > 1) {
       var noteCount = document.createElement("span");
-      noteCount.textContent = paper.notes.length + " 篇站内笔记";
+      noteCount.textContent = paper.notes.length + " 条收录记录";
       meta.appendChild(noteCount);
     }
     if (meta.childNodes.length) cell.appendChild(meta);
@@ -553,8 +554,12 @@
     root.dataset.loading = "true";
     var source = root.getAttribute("data-source");
     var dataUrl = new URL(source, location.href).href;
-    loadData(dataUrl)
-      .then(function (data) {
+    // Scheduled data commits can precede a Pages deployment. The snapshot also works offline from GitHub.
+    var latest = root.getAttribute("data-latest");
+    var request = latest && location.hostname === "yiming421.github.io"
+      ? loadData(latest).catch(function () { return loadData(dataUrl); })
+      : loadData(dataUrl);
+    request.then(function (data) {
         root.dataset.loading = "false";
         initLeaderboard(root, data);
       })

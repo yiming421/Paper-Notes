@@ -23,3 +23,11 @@ IDs (or `null` to intentionally exclude a note):
 
 Do not hand-edit the generated cache or public
 `docs/assets/data/citations.json` file.
+
+## NeurIPS 2026 conference catalog
+
+The public catalog in `docs/assets/data/neurips2026.csv` uses the [official NeurIPS program](https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json). One poster record per OpenReview forum represents a main, Evaluations and Datasets, or Position paper. These tracks have poster records for oral and spotlight papers as well. The catalog includes unmatched papers. Title links for ranked entries go to OpenReview.
+
+The [ai-conferences/NeurIPS2026 crosswalk](https://huggingface.co/datasets/ai-conferences/NeurIPS2026/tree/a8c99e29cf57820539485e02b6e2f91127d616ed) supplies candidate arXiv IDs for main-track papers. The importer checks forum IDs and titles. The citation generator independently checks Semantic Scholar titles. To rebuild the catalog, run `python scripts/import_neurips2026.py PROGRAM.json CROSSWALK.parquet docs/assets/data/neurips2026.csv` with PyArrow installed. Regular citation updates use the checked-in CSV and the standard library.
+
+Pass `--arxiv-metadata METADATA.parquet` to include the [arXiv registry mirror through November 18, 2026](https://huggingface.co/datasets/t14n/arxiv-complete-with-pdf-text/tree/953179ab022061df191982102ba247e8e285e0c5/metadata). Extra identifiers require a unique exact normalized title and a matching listed author. The catalog records the source of each candidate arXiv ID.

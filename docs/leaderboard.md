@@ -14,15 +14,19 @@ hide:
 
 # 🏆 AI 论文引用排行榜
 
-基于 [Semantic Scholar](https://www.semanticscholar.org/) 的公开引用数据，按论文去重并定期更新。可按会议、年份、研究领域或标题筛选；点击论文标题可直接阅读站内解读。
+基于 [Semantic Scholar](https://www.semanticscholar.org/) 的公开引用数据，按论文去重并定期更新。可按会议、年份、研究领域或标题筛选；点击论文标题可阅读站内解读或打开论文的 OpenReview 页面。
 
-<div id="citation-leaderboard" data-source="../assets/data/citations.json">
+[查看 NeurIPS 2026 引用排名](?conference=NeurIPS&year=2026) · [下载 NeurIPS 2026 完整目录（CSV）](assets/data/neurips2026.csv)
+
+NeurIPS 2026 收录主赛道、评测与数据集赛道及立场论文赛道。目录保留每篇录用论文，成功匹配 Semantic Scholar 后进入排名。
+
+<div id="citation-leaderboard" data-source="../assets/data/citations.json" data-latest="https://raw.githubusercontent.com/yiming421/Paper-Notes/main/docs/assets/data/citations.json">
 
 <div class="cl-stats" aria-label="排行榜统计">
   <div class="cl-stat"><span data-cl-stat="works">—</span><small>已匹配论文</small></div>
   <div class="cl-stat"><span data-cl-stat="citations">—</span><small>引用总数</small></div>
   <div class="cl-stat"><span data-cl-stat="influential">—</span><small>高影响力引用</small></div>
-  <div class="cl-stat"><span data-cl-stat="coverage">—</span><small>笔记覆盖率</small></div>
+  <div class="cl-stat"><span data-cl-stat="coverage">—</span><small>条目匹配率</small></div>
   <div class="cl-stat"><span data-cl-stat="updated">—</span><small>数据更新时间</small></div>
 </div>
 

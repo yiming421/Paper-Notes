@@ -19,6 +19,7 @@ rate limit or interrupted bootstrap never discards completed work.
 from __future__ import annotations
 
 import argparse
+import csv
 import dataclasses
 import datetime as dt
 import difflib
@@ -83,10 +84,11 @@ class Note:
     area: str
     conference_year: int
     dois: tuple[str, ...]
+    external_url: str | None = None
 
     @property
     def url(self) -> str:
-        return str(Path(self.path).with_suffix("")) + "/"
+        return self.external_url or str(Path(self.path).with_suffix("")) + "/"
 
 
 class SemanticScholarError(RuntimeError):
@@ -222,6 +224,23 @@ def scan_notes(docs_dir: Path) -> list[Note]:
                 dois=extract_dois(markdown),
             )
         )
+    catalog = docs_dir / "assets" / "data" / "neurips2026.csv"
+    if catalog.is_file():
+        with catalog.open(encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle):
+                forum = row["forum"]
+                if not re.fullmatch(r"[\w-]{10}", forum):
+                    raise ValueError(f"Invalid NeurIPS 2026 forum ID: {forum}")
+                notes.append(Note(
+                    path=f"NeurIPS2026/{forum}.md",
+                    title=row["title"],
+                    title_key=normalize_title(row["title"]),
+                    conference="NeurIPS2026",
+                    area=row["area"],
+                    conference_year=2026,
+                    dois=(f"10.48550/arxiv.{row['arxiv']}",) if row["arxiv"] else (),
+                    external_url=f"https://openreview.net/forum?id={forum}",
+                ))
     return notes
 
 
@@ -699,7 +718,7 @@ def resolve_identifiers(
             "identifier": None,
             "identifier_checked": attempted_on,
             "last_attempted": attempted_on,
-            "title_checked": None,
+            "title_checked": cache["matches"].get(path, {}).get("title_checked"),
         }
     if checkpoint and unresolved:
         checkpoint()
@@ -722,7 +741,15 @@ def match_titles(
 
     matched = 0
     requests = 0
-    for key in sorted(by_key):
+    # Untried groups come first so a weekly request budget also reaches newly added conferences.
+    def oldest_title_check(key: tuple[str, int]) -> tuple[str, tuple[str, int]]:
+        checked = min(
+            cache["matches"].get(note.path, {}).get("title_checked") or ""
+            for note in by_key[key]
+        )
+        return checked, key
+
+    for key in sorted(by_key, key=oldest_title_check):
         if max_requests is not None and requests >= max_requests:
             break
         grouped_notes = by_key[key]
@@ -754,6 +781,7 @@ def match_titles(
                 "title_key": note.title_key,
                 "paper_id": None,
                 "match_method": "unmatched",
+                "identifier_checked": cache["matches"].get(note.path, {}).get("identifier_checked"),
                 "match_score": None,
                 "identifier": None,
                 "last_attempted": attempted_on,
@@ -1202,12 +1230,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(f"resolved {identifier_resolved:,} notes by DOI/arXiv ID")
             checkpoint()
 
-            if identifier_notes:
-                print(
-                    "deferred refreshing older counts until the identifier bootstrap "
-                    "is complete"
-                )
-            elif args.skip_refresh:
+            if args.skip_refresh:
                 print("skipped refreshing cached counts for this bootstrap run")
             else:
                 refreshed, missing_ids = refresh_known_papers(

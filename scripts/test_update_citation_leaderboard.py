@@ -25,6 +25,59 @@ class InvalidBatchClient(leaderboard.SemanticScholarClient):
 
 
 class CitationLeaderboardTests(unittest.TestCase):
+    def test_catalog_import_uses_one_poster_per_forum_in_paper_tracks(self):
+        from import_neurips2026 import GROUP, TRACKS, build_catalog
+
+        events = [
+            {"eventtype": "Poster", "id": number, "sourceurl": group,
+             "paper_url": f"https://openreview.net/forum?id=forum{number:05}",
+             "name": f"Paper {number}", "topic": "Applications->Robotics"}
+            for number, group in enumerate(TRACKS)
+        ]
+        events.extend([dict(events[0], eventtype="Oral"), dict(events[0], sourceurl=GROUP + "Workshop")])
+        crosswalk = [
+            {"paper_id": "forum00000", "title": "Paper 0", "arxiv_id": "2605.11111"},
+            {"paper_id": "forum00001", "title": "Different title", "arxiv_id": "2605.22222"},
+        ]
+        rows = build_catalog(events, crosswalk)
+        self.assertEqual(len(rows), 3)
+        self.assertEqual([row["arxiv"] for row in rows], ["2605.11111", "", ""])
+
+    def test_title_budget_prioritizes_untried_papers_and_preserves_id_check(self):
+        class Missing:
+            def match_title(self, title, year):
+                return None
+
+        notes = [
+            leaderboard.Note(title, title, title, "NeurIPS2026", "others", 2026, ())
+            for title in ("alpha", "zeta")
+        ]
+        cache = leaderboard.empty_cache()
+        cache["matches"] = {
+            "alpha": {"title_checked": "2026-10-01"},
+            "zeta": {"identifier_checked": "2026-11-28"},
+        }
+        leaderboard.match_titles(Missing(), cache, notes, attempted_on="2026-11-28",
+                                 retrieved_at="2026-11-28T00:00:00Z", max_requests=1)
+        self.assertEqual(cache["matches"]["zeta"]["title_checked"], "2026-11-28")
+        self.assertEqual(cache["matches"]["zeta"]["identifier_checked"], "2026-11-28")
+        self.assertEqual(cache["matches"]["alpha"]["title_checked"], "2026-10-01")
+
+    def test_neurips_catalog_entries_link_to_their_openreview_forum(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            docs = Path(temporary)
+            data = docs / "assets" / "data"
+            data.mkdir(parents=True)
+            (data / "neurips2026.csv").write_text(
+                "forum,poster,track,area,title,arxiv,arxiv_source\n"
+                "abc1234567,1234,main,learning_theory,Example Paper,2605.11111,conference\n",
+                encoding="utf-8",
+            )
+            note, = leaderboard.scan_notes(docs)
+        self.assertEqual(note.conference, "NeurIPS2026")
+        self.assertEqual(note.url, "https://openreview.net/forum?id=abc1234567")
+        self.assertEqual(note.dois, ("10.48550/arxiv.2605.11111",))
+
     def test_scan_note_extracts_title_and_identifiers(self):
         with tempfile.TemporaryDirectory() as temporary:
             docs = Path(temporary)
