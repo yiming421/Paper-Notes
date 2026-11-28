@@ -1,8 +1,4 @@
-/* Interactive Semantic Scholar citation leaderboard for /leaderboard/.
- *
- * The generated JSON is loaded only on the leaderboard page. Material's
- * instant navigation is supported through document$.
- */
+/* CiteAtlas conference overview and searchable citation rankings. */
 (function () {
   "use strict";
 
@@ -211,19 +207,12 @@
     return cell;
   }
 
-  function rankLabel(rank) {
-    if (rank === 1) return "🥇";
-    if (rank === 2) return "🥈";
-    if (rank === 3) return "🥉";
-    return String(rank);
-  }
-
   function renderRows(tbody, papers, start, conference, year, area) {
     tbody.innerHTML = "";
     papers.forEach(function (paper, index) {
       var notes = matchingNotes(paper, conference, year, area);
       var row = document.createElement("tr");
-      appendTextCell(row, "cl-rank", rankLabel(start + index + 1));
+      appendTextCell(row, "cl-rank", String(start + index + 1).padStart(2, "0"));
       row.appendChild(makePaperCell(paper, notes));
       row.appendChild(makeVenueCell(notes));
 
@@ -298,13 +287,14 @@
       year: params.get("year") || "",
       area: params.get("area") || "",
       sort: params.get("sort") || "citations",
+      citedOnly: params.get("cited") === "1",
       page: Math.max(1, parseInt(params.get("page"), 10) || 1)
     };
   }
 
   function writeQueryState(state) {
     var url = new URL(location.href);
-    ["q", "conference", "year", "area", "sort", "page"].forEach(function (key) {
+    ["q", "conference", "year", "area", "sort", "page", "cited"].forEach(function (key) {
       url.searchParams.delete(key);
     });
     if (state.query) url.searchParams.set("q", state.query);
@@ -312,6 +302,7 @@
     if (state.year) url.searchParams.set("year", state.year);
     if (state.area) url.searchParams.set("area", state.area);
     if (state.sort && state.sort !== "citations") url.searchParams.set("sort", state.sort);
+    if (state.citedOnly) url.searchParams.set("cited", "1");
     if (state.page > 1) url.searchParams.set("page", String(state.page));
     history.replaceState(history.state, "", url.pathname + url.search + url.hash);
   }
@@ -336,16 +327,6 @@
     if (!search || !conference || !year || !area || !sort || !tbody) return;
 
     setText(root, "[data-cl-stat='works']", numberFormat.format(data.matched_works || 0));
-    setText(root, "[data-cl-stat='citations']", numberFormat.format(data.total_citations || 0));
-    setText(
-      root,
-      "[data-cl-stat='influential']",
-      numberFormat.format(data.total_influential_citations || 0)
-    );
-    var coverage = data.total_notes
-      ? Math.round((1000 * data.matched_notes) / data.total_notes) / 10
-      : 0;
-    setText(root, "[data-cl-stat='coverage']", coverage + "%");
     try {
       setText(root, "[data-cl-stat='updated']", dateFormat.format(new Date(data.generated_at)));
     } catch (error) {
@@ -380,6 +361,7 @@
 
     var initial = queryState();
     search.value = initial.query;
+    citedOnly.checked = initial.citedOnly;
     var initialConference = initial.conference;
     var initialYear = initial.year;
     if (!Object.prototype.hasOwnProperty.call(conferences, initialConference)) {
@@ -433,6 +415,11 @@
       var selectedConference = conference.value;
       var selectedYear = year.value;
       var selectedArea = area.value;
+      var isEdition = selectedConference === "NeurIPS" && selectedYear === "2026";
+      setText(root, "#ranking-title", isEdition ? "NeurIPS 2026 引用排名" : "论文引用排名");
+      var editionLink = root.querySelector(".edition-link");
+      editionLink.href = isEdition ? editionLink.dataset.overviewUrl : editionLink.dataset.editionUrl;
+      editionLink.textContent = isEdition ? "查看专题总览 ↗" : "NeurIPS 2026 专题排名 ↗";
       var filtered = papers.filter(function (paper) {
         var notes = matchingNotes(paper, selectedConference, selectedYear, selectedArea);
         if (!notes.length) return false;
@@ -487,6 +474,7 @@
         year: selectedYear,
         area: selectedArea,
         sort: sort.value,
+        citedOnly: citedOnly.checked,
         page: page
       });
     }
@@ -547,33 +535,64 @@
     render();
   }
 
+  function updateOverview(root, data) {
+    var counts = [0, 0, 0, 0, 0, 0];
+    var thresholds = [1, 5, 10, 25, 100];
+    var matched = 0;
+    var citations = 0;
+    var leaders = document.createDocumentFragment();
+    var topCount = 0;
+    data.papers.forEach(function (paper) {
+      var notes = paper.notes.filter(function (note) { return note.conference === "NeurIPS2026"; });
+      if (!notes.length) return;
+      var bucket = thresholds.filter(function (minimum) { return paper.citations >= minimum; }).length;
+      counts[bucket] += 1;
+      matched += notes.length;
+      citations += paper.citations;
+      if (topCount >= 5) return;
+      topCount += 1;
+      var row = document.createElement("tr");
+      appendTextCell(row, "", String(topCount).padStart(2, "0"));
+      var cell = document.createElement("td");
+      var link = document.createElement("a");
+      link.href = notes[0].path;
+      link.textContent = notes[0].title || paper.title;
+      cell.appendChild(link);
+      row.appendChild(cell);
+      appendTextCell(row, "", numberFormat.format(paper.citations));
+      leaders.appendChild(row);
+    });
+    root.querySelector("#edition-leaders").replaceChildren(leaders);
+    var total = Number(root.dataset.catalogTotal);
+    setText(root, "[data-edition='matched']", numberFormat.format(matched));
+    setText(root, "[data-edition='citations']", numberFormat.format(citations));
+    setText(root, "[data-edition='coverage']", total ? (100 * matched / total).toFixed(2) + "%" : "—");
+    setText(root, "[data-edition='updated']", data.generated_at.slice(0, 10));
+    var maximum = Math.max.apply(null, [1].concat(counts));
+    root.querySelectorAll(".bar").forEach(function (bar, i) {
+      bar.style.setProperty("--height", (100 * counts[i] / maximum) + "%");
+      bar.firstElementChild.textContent = numberFormat.format(counts[i]);
+    });
+  }
+
   function init() {
-    var root = document.getElementById("citation-leaderboard");
-    document.body.classList.toggle("pn-on-leaderboard", !!root);
-    if (!root || root.dataset.loading === "true" || root.dataset.ready === "true") return;
-    root.dataset.loading = "true";
-    var source = root.getAttribute("data-source");
-    var dataUrl = new URL(source, location.href).href;
-    // Scheduled data commits can precede a Pages deployment. The snapshot also works offline from GitHub.
-    var latest = root.getAttribute("data-latest");
+    var home = document.getElementById("atlas-home");
+    var root = home || document.getElementById("citation-leaderboard");
+    if (!root) return;
+    var dataUrl = new URL(root.dataset.source, location.href).href;
+    var latest = root.dataset.latest;
     var request = latest && location.hostname === "yiming421.github.io"
       ? loadData(latest).catch(function () { return loadData(dataUrl); })
       : loadData(dataUrl);
     request.then(function (data) {
-        root.dataset.loading = "false";
-        initLeaderboard(root, data);
-      })
-      .catch(function (error) {
-        root.dataset.loading = "false";
-        var status = root.querySelector("#cl-status");
-        if (status) status.textContent = "引用数据加载失败，请稍后重试。";
-        if (window.console) console.error("citation leaderboard:", error);
-      });
+      if (home) updateOverview(home, data);
+      else initLeaderboard(root, data);
+    }).catch(function (error) {
+      var status = root.querySelector("#cl-status");
+      if (status) status.textContent = "引用数据加载失败，请刷新页面重试。";
+      if (window.console) console.error("CiteAtlas:", error);
+    });
   }
 
-  if (window.document$ && typeof window.document$.subscribe === "function") {
-    window.document$.subscribe(init);
-  } else {
-    document.addEventListener("DOMContentLoaded", init);
-  }
+  document.addEventListener("DOMContentLoaded", init);
 })();

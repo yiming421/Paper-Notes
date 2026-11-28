@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#103d36">
+  <title>{{ page.meta.title | e }}</title>
+  <meta name="description" content="{{ page.meta.description | e }}">
+  <link rel="canonical" href="{{ page.canonical_url }}">
+  <meta property="og:title" content="{{ page.meta.title | e }}">
+  <meta property="og:description" content="{{ page.meta.description | e }}">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="{{ 'assets/citeatlas.png' | url }}" type="image/png">
+  <link rel="stylesheet" href="{{ 'stylesheets/citation-atlas.css' | url }}">
+  <script defer src="{{ 'javascripts/citation-leaderboard.js' | url }}"></script>
+</head>
+{% set home = page.is_homepage %}
+{% set board = 'leaderboard/' | url %}
+{% set edition = board ~ '?conference=NeurIPS&year=2026' %}
+{% set fullcsv = 'assets/data/neurips2026.csv' | url %}
+{% set audit = 'assets/data/neurips2026-match-audit-20261128.csv' | url %}
+{% set counts = atlas.counts %}
+{% set bins = ['0', '1–4', '5–9', '10–24', '25–99', '100+'] %}
+<body>
+<a class="skip" href="#main">跳至主要内容</a>
+<header class="mast">
+  <div class="wrap navline">
+    <a class="brand" href="{{ './' if home else '../' }}" aria-label="CiteAtlas 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>CiteAtlas</a>
+    <nav aria-label="主导航">
+      <a href="{{ './' if home else '../' }}"{% if home %} aria-current="page"{% endif %}>总览</a>
+      <a href="{{ board }}"{% if not home %} aria-current="page"{% endif %}>完整排名</a>
+      <a href="{{ '#method' if home else '../#method' }}">数据说明</a>
+    </nav>
+    <a class="repo" href="{{ config.repo_url }}">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main class="wrap" id="main">
+<div id="{{ 'atlas-home' if home else 'citation-leaderboard' }}" data-source="{{ 'assets/data/citations.json' | url }}" data-latest="https://raw.githubusercontent.com/yiming421/Paper-Notes/main/docs/assets/data/citations.json" data-catalog-total="{{ atlas.total }}">
+{% if home %}
+<section class="hero" aria-labelledby="edition-title">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="rule"></span> 会议专题 <span class="divider">/</span> Conference spotlight</p>
+    <h1 id="edition-title">NeurIPS <em>2026</em></h1>
+    <h2>论文引用排行榜</h2>
+    <p class="intro">追踪本届录用论文在 Semantic Scholar 的引用表现，覆盖主赛道、评测与数据集赛道及立场论文赛道。</p>
+    <div class="actions"><a class="primary" href="{{ edition }}">查看专题排名 <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ fullcsv }}">下载会议目录 <span aria-hidden="true">↓</span></a></div>
+  </div>
+  <figure class="distribution">
+    <figcaption><strong>引用分布</strong><span>已匹配论文 · 篇</span></figcaption>
+    <div class="bars">{% for label in bins %}
+      <div class="bin"><div class="bar-space"><div class="bar" style="--height:{{ 100 * counts[loop.index0] / ([1, counts|max]|max) }}%"><span>{{ '{:,}'.format(counts[loop.index0]) }}</span></div></div><small>{{ label }}</small></div>
+    {% endfor %}</div>
+    <p>每篇论文的引用次数</p>
+  </figure>
+</section>
+<dl class="metrics" aria-label="NeurIPS 2026 统计">
+{% for key,label,value in [('catalog','录用论文','{:,}'.format(atlas.total)),('matched','已匹配论文','{:,}'.format(atlas.matched)),('citations','引用总数','{:,}'.format(atlas.citations)),('coverage','匹配率','%.2f%%'|format(100*atlas.matched/atlas.total if atlas.total else 0))] %}
+ <div><dt>{{ label }}</dt><dd data-edition="{{ key }}">{{ value }}</dd></div>
+{% endfor %}
+</dl>
+<div class="editorial">
+ <section class="top-papers" aria-labelledby="leaders">
+  <div class="section-heading"><h2 id="leaders">引用前五名</h2><a href="{{ edition }}">完整榜单 <span aria-hidden="true">↗</span></a></div>
+  <table class="top-table"><thead><tr><th scope="col">排名</th><th scope="col">NeurIPS 2026 论文</th><th scope="col">引用数</th></tr></thead><tbody id="edition-leaders">
+  {% for paper in atlas.leaders %}<tr><td>{{ '%02d'|format(loop.index) }}</td><td><a href="{{ paper.url | e }}">{{ paper.title | e }}</a></td><td>{{ '{:,}'.format(paper.citations) }}</td></tr>{% endfor %}
+  </tbody></table>
+ </section>
+ <aside class="dossier"><p class="eyebrow ink">NeurIPS 2026</p><h2>专题资料</h2>
+  <p>从会议目录到引用记录，逐篇查看论文归属和匹配证据。</p>
+  <a class="resource" href="{{ fullcsv }}"><span>完整录用目录</span><small>CSV ↓</small></a>
+  <a class="resource" href="{{ audit }}"><span>11 月 28 日补配明细</span><small>CSV ↓</small></a>
+  <p class="small-date">引用数据更新于 <time data-edition="updated">{{ atlas.date }}</time></p>
+ </aside>
+</div>
+<section class="method" id="method" aria-labelledby="method-title">
+  <div><p class="eyebrow ink">CiteAtlas</p><h2 id="method-title">这份榜单怎么读？</h2><a class="inline" href="{{ board }}">浏览全部会议排名 ↗</a></div>
+  <div class="method-text"><p>CiteAtlas 每周更新 AI 会议论文的公开引用记录。我们按 Semantic Scholar 论文 ID 去重，既可比较总引用，也可查看该索引标记的高影响力引用。</p>
+  <p>NeurIPS 2026 采用会场录用年份。遇到预印本改名，我们交叉核对作者、摘要、旧题名与项目页。匹配率以完整录用目录为分母。已匹配且引用数为 0 的论文正常入榜，尚未核实的论文保留在目录中。</p></div>
+</section>
+{% else %}
+<div class="board-heading"><div><p class="eyebrow ink"><span class="rule"></span> CiteAtlas</p><h1 id="ranking-title">论文引用排名</h1><p>按会议、年份或研究领域定位论文，比较 Semantic Scholar 引用记录。</p></div>
+<a class="edition-link" data-edition-url="{{ edition }}" data-overview-url="../" href="{{ edition }}">NeurIPS 2026 专题排名 ↗</a></div>
+<div class="board-info"><span>全站收录 <b data-cl-stat="works">{{ '{:,}'.format(atlas.works) }}</b> 篇已匹配论文</span><span>更新于 <time data-cl-stat="updated">{{ atlas.date }}</time></span></div>
+<form class="filters" aria-label="筛选论文" onsubmit="return false">
+<label class="search"><span>搜索论文</span><input id="cl-search" type="search" placeholder="输入论文题名或关键词" autocomplete="off"></label>
+<label><span>会议</span><select id="cl-conference"><option value="">全部会议</option></select></label>
+<label><span>年份</span><select id="cl-year"><option value="">全部年份</option></select></label>
+<label><span>研究领域</span><select id="cl-area"><option value="">全部领域</option></select></label>
+<label><span>排序方式</span><select id="cl-sort"><option value="citations">总引用优先</option><option value="influential">高影响力引用优先</option><option value="newest">发表年份从新到旧</option><option value="title">题名 A–Z</option></select></label>
+<div class="options"><label><input type="checkbox" id="cl-cited-only"> 仅看有引用的论文</label><button type="button" id="cl-clear">重置筛选</button></div>
+</form>
+<div class="results"><h2>排名结果</h2><span id="cl-status" role="status" aria-live="polite">正在读取引用数据…</span></div>
+<div class="table-wrap"><table class="cl-table"><thead><tr><th scope="col">排名</th><th scope="col">论文</th><th scope="col">会议</th><th scope="col">领域</th><th scope="col">引用数</th><th scope="col">来源</th></tr></thead>
+<tbody id="cl-rows"></tbody></table></div>
+<nav class="pagination" aria-label="排名分页"><button id="cl-prev" disabled>上一页</button><span id="cl-page-label"></span><button id="cl-next" disabled>下一页</button></nav>
+<noscript>完整交互排名需要 JavaScript。可直接<a href="{{ fullcsv }}">下载 NeurIPS 2026 目录</a>。</noscript>
+{% endif %}
+</div></main>
+<footer><div class="wrap foot"><div><b>CiteAtlas</b><span>AI 论文引用榜</span></div><p>论文笔记与分类源自 <a href="https://github.com/zhaoyang97/Paper-Notes">Paper Notes</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><br>引用数据来自 <a href="https://www.semanticscholar.org/">Semantic Scholar</a></p></div></footer>
+</body></html>

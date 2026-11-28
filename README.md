@@ -1,187 +1,25 @@
-# 📚 AI Paper Notes
-<!-- [![Stars](https://img.shields.io/github/stars/zhaoyang97/Paper-Notes?style=social)](https://github.com/zhaoyang97/Paper-Notes/stargazers)
-[![Notes](https://img.shields.io/badge/笔记-13%2C628%20篇-blue)](https://papernotes.org/)
-[![Conferences](https://img.shields.io/badge/学术会议-9%20个-orange)](#-会议覆盖)
-[![Site](https://img.shields.io/badge/在线阅读-Paper--Notes-brightgreen)](https://papernotes.org/)
-[![Last Commit](https://img.shields.io/github/last-commit/zhaoyang97/Paper-Notes?label=最近更新)](https://github.com/zhaoyang97/Paper-Notes/commits) -->
+# CiteAtlas · AI 论文引用榜
 
-**5分钟读懂一篇顶会论文，一个仓库读懂最新 AI 进展。**
-- 📖 **23000+** 篇 AI · LLM · NLP · CV 顶会论文解读
-- 🏛️ 覆盖 ACL · CVPR · ICLR · AAAI · NeurIPS · ICCV · ICML · ECCV 等会议
-- 🔬 横跨 LLM Reasoning · VLM · Agent · RLHF · RAG · AIGC · Robotics · Auto Driving 等40多个研究方向
-- 🔄 持续更新中
+CiteAtlas 按 Semantic Scholar 引用数整理 AI 会议论文。首页聚焦 NeurIPS 2026，展示引用分布、收录覆盖率和引用前五名。完整榜支持跨会议比较，可按年份、领域和论文题名筛选，也能按高影响力引用排序。
 
-## 🌐 在线阅读
+**[打开 CiteAtlas](https://yiming421.github.io/Paper-Notes/)**　·　[NeurIPS 2026 排名](https://yiming421.github.io/Paper-Notes/leaderboard/?conference=NeurIPS&year=2026)　·　[全部会议](https://yiming421.github.io/Paper-Notes/leaderboard/)
 
-**[https://papernotes.org/](https://papernotes.org/)**
+[![CiteAtlas 的 NeurIPS 2026 专题首页预览](docs/assets/citeatlas-overview.webp)](https://yiming421.github.io/Paper-Notes/)
 
-> 💡 **提示**：如果数学公式渲染异常，刷新页面通常可以解决。
+## NeurIPS 2026
 
-## 💬 问题反馈
+会议目录覆盖主赛道、Evaluations and Datasets 和 Position 三个赛道。截至 2026 年 11 月 28 日，9,003 篇录用论文中已匹配 6,593 篇，匹配率为 73.23%，合计 24,792 次引用。首页数字随引用数据更新。
 
-Paper Notes 交流群: `1094559400`  
-<img src="docs/assets/qq-group-qr.png" width="180" alt="Paper Notes QQ 群二维码">
+- [完整录用目录（CSV）](docs/assets/data/neurips2026.csv)收录每篇论文的会场题名、赛道和 OpenReview 编号。
+- [逐篇补配明细（CSV）](docs/assets/data/neurips2026-match-audit-20261128.csv)记录 11 月 28 日复核的 2,785 篇论文及其证据。此次补入 375 篇，新增 1,259 次引用。
+- [核实后的版本标识（CSV）](docs/assets/data/neurips2026-versions.csv)供后续更新重试使用。
 
-## 🎉 版本发布
+## 排名与更新
 
-- **v1.5.0**（2026-07-11）：新增 ECCV 2026 论文解读
-- **v1.4.0**（2026-06-20）：补全 ICLR 2026 全部约 5,000 篇论文解读
-- **v1.3.0**（2026-06-13）：补全 CVPR 2026 全部约 4,000 篇论文解读
-- **v1.2.0**（2026-05-23）：新增 ICML 2026 论文解读
-- **v1.1.0**（2026-04-25）：新增 ACL 2026 论文解读
-- **v1.0.0**（2026-04-18）：首个正式版本，累计 13,000+ 篇论文解读，覆盖 CVPR 2026、ICLR 2026、AAAI 2026、NeurIPS 2025、ICCV 2025、ACL 2025、ICML 2025、CVPR 2025、ECCV 2024共9个会议
+同一作品按 Semantic Scholar 论文 ID 去重。总引用来自 `citationCount`，高影响力引用来自 `influentialCitationCount`。会议筛选采用录用年份，索引中的预印本可能更早发表。已匹配并返回零引用的论文可以入榜，未匹配条目的引用数保留为空。
 
-## 📊 会议覆盖
+现有 GitHub Actions 工作流每周刷新数据，也可在 **Actions → Update Semantic Scholar Citation Leaderboard** 手动运行。公开 API 支持无密钥访问，仓库可选用 `SEMANTIC_SCHOLAR_API_KEY` 密钥提高请求额度。生成器、缓存与例外映射见[数据维护说明](data/README.md)。
 
-| 会议 | 笔记数 | 完整论文清单 |
-|------|-------:|:-------------|
-| [ECCV 2026](https://papernotes.org/ECCV2026/) | 420 | [ECCV2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ECCV2026-Papers.md) |
-| [ICML 2026](https://papernotes.org/ICML2026/) | 1,846 | [ICML2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICML2026-Papers.md) |
-| [ACL 2026](https://papernotes.org/ACL2026/) | 1,419 | [ACL2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ACL2026-Papers.md) |
-| [CVPR 2026](https://papernotes.org/CVPR2026/) | 4,067 | [CVPR2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/CVPR2026-Papers.md) |
-| [ICLR 2026](https://papernotes.org/ICLR2026/) | 5,342 | [ICLR2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICLR2026-Papers.md) |
-| [AAAI 2026](https://papernotes.org/AAAI2026/) | 1,381 | [AAAI2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/AAAI2026-Papers.md) |
-| [NeurIPS 2025](https://papernotes.org/NeurIPS2025/) | 2,530 | [NeurIPS2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/NeurIPS2025-Papers.md) |
-| [ICCV 2025](https://papernotes.org/ICCV2025/) | 1,315 | [ICCV2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICCV2025-Papers.md) |
-| [ACL 2025](https://papernotes.org/ACL2025/) | 1,855 | [ACL2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ACL2025-Papers.md) |
-| [ICML 2025](https://papernotes.org/ICML2025/) | 1,063 | [ICML2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICML2025-Papers.md) |
-| [CVPR 2025](https://papernotes.org/CVPR2025/) | 1,820 | [CVPR2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/CVPR2025-Papers.md) |
-| [ECCV 2024](https://papernotes.org/ECCV2024/) | 869 | [ECCV2024-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ECCV2024-Papers.md) |
+## 来源与许可
 
-## 🗓️ 更新路线图
-
-
-| 会议 | 录用通知时间 | 名单公布时间 | 会议召开时间 |
-|------|--------------|--------------|--------------|
-| ECCV 2026 | 2026-06 | 2026-07 | 2026-09 |
-| NeurIPS 2026 | 2026-09 | 2026-09 | 2026-12 |
-| EMNLP 2026 | 2026-08 | 2026-10 | 2026-10 |
-| AAAI 2027 | 2026-11 | 2026-12 | 2027-01 |
-| ICLR 2027 | 2027-01 | 2027-01 | 2027-04 |
-| CVPR 2027 | 2027-02 | 2027-03 | 2027-06 |
-
-## 🔍 研究领域
-
-| 文件夹 | 领域 | 笔记数 |
-|--------|------|-------:|
-| `3d_vision/` | 🧊 3D 视觉 | 2,010 |
-| `ai_safety/` | 🛡️ AI 安全/隐私 | 635 |
-| `aigc_detection/` | 🔎 AIGC 检测 | 96 |
-| `anomaly_detection/` | 🔍 异常检测 | 14 |
-| `audio_speech/` | 🎵 音频/语音 | 392 |
-| `autonomous_driving/` | 🚗 自动驾驶 | 565 |
-| `causal_inference/` | 🔗 因果推理 | 158 |
-| `code_intelligence/` | 💻 代码智能 | 208 |
-| `computational_biology/` | 🧬 计算生物 | 410 |
-| `dialogue/` | 🗣️ 对话系统 | 77 |
-| `earth_science/` | 🌍 地球科学 | 19 |
-| `federated_learning/` | 🤝 联邦学习 | 19 |
-| `graph_learning/` | 🕸️ 图学习 | 342 |
-| `hallucination/` | 👻 幻觉检测 | 202 |
-| `human_understanding/` | 🧑 人体理解 | 411 |
-| `image_generation/` | 🎨 图像生成 | 2,076 |
-| `image_restoration/` | 🖼️ 图像恢复 | 372 |
-| `information_retrieval/` | 🔍 信息检索/RAG | 345 |
-| `interpretability/` | 🔬 可解释性 | 615 |
-| `knowledge_editing/` | ✏️ 知识编辑 | 69 |
-| `learning_theory/` | 📐 学习理论 | 344 |
-| `llm_agent/` | 🦾 LLM Agent | 505 |
-| `llm_alignment/` | ⚖️ 对齐/RLHF | 352 |
-| `llm_efficiency/` | ⚡ LLM 效率 | 346 |
-| `llm_evaluation/` | 📊 LLM 评测 | 494 |
-| `llm_nlp/` | 💬 LLM 其他 | 754 |
-| `llm_pretraining/` | 📚 预训练 | 295 |
-| `llm_reasoning/` | 💡 LLM 推理 | 639 |
-| `llm_safety/` | 🔒 LLM 安全 | 566 |
-| `medical_imaging/` | 🏥 医学图像 | 610 |
-| `medical_nlp/` | 🩺 医疗 NLP | 141 |
-| `model_compression/` | 📦 模型压缩 | 1,045 |
-| `multi_agent/` | 🤝 多智能体 | 178 |
-| `multilingual_mt/` | 🌐 多语言/翻译 | 185 |
-| `multimodal_vlm/` | 🧩 多模态 VLM | 1,450 |
-| `nlp_generation/` | ✍️ 文本生成 | 62 |
-| `nlp_understanding/` | 📖 NLP 理解 | 76 |
-| `object_detection/` | 🎯 目标检测 | 308 |
-| `optimization/` | 📐 优化/理论 | 576 |
-| `physics/` | ⚛️ 物理/科学计算 | 217 |
-| `recommender/` | 🎁 推荐系统 | 140 |
-| `reinforcement_learning/` | 🎮 强化学习 | 903 |
-| `remote_sensing/` | 🛰️ 遥感 | 133 |
-| `robotics/` | 🤖 具身智能 | 591 |
-| `segmentation/` | ✂️ 语义分割 | 491 |
-| `self_supervised/` | 🔄 自监督 | 334 |
-| `signal_comm/` | 📡 信号/通信 | 39 |
-| `social_computing/` | 👥 社会计算 | 153 |
-| `time_series/` | 📈 时间序列 | 311 |
-| `video_generation/` | 🎬 视频生成 | 506 |
-| `video_understanding/` | 📹 视频理解 | 506 |
-| `vlm_efficiency/` | ⚡ VLM 效率 | 144 |
-| `vlm_reasoning/` | 💡 VLM 推理 | 424 |
-| `others/` | 📂 其他 | 995 |
-
-## 📂 目录结构
-
-```
-docs/
-├── index.md                          # 总索引（首页，含全站搜索）
-├── leaderboard.md                    # Semantic Scholar 引用排行榜
-├── CVPR2026/
-│   ├── index.md                      # 会议索引（按领域聚合）
-│   ├── 3d_vision/
-│   │   ├── index.md                  # 领域索引
-│   │   ├── paper_slug_1.md           # 单篇论文笔记
-│   │   ├── paper_slug_2.md
-│   │   └── ...
-│   ├── llm_reasoning/
-│   ├── multimodal_vlm/
-│   └── ...
-├── ICML2026/
-├── ACL2026/
-├── ICLR2026/
-├── AAAI2026/
-├── NeurIPS2025/
-├── ICCV2025/
-├── ACL2025/
-├── ICML2025/
-├── CVPR2025/
-└── ECCV2024/
-```
-
-## 🏆 Semantic Scholar 引用排行榜
-
-站点的「引用榜」页面按 Semantic Scholar `citationCount` 对收录论文排名，并可按其 `influentialCitationCount` 高影响力引用排序。页面支持按会议、研究领域和标题筛选。生成器会：
-
-1. 扫描 `docs/<会议>/<领域>/*.md` 中的标题、DOI、ACL Anthology 与 arXiv 标识；
-2. 先通过最多 500 个标识符的批量请求精确匹配，再对返回标题做本地核验；
-3. 对没有标识符的笔记使用严格的单篇标题匹配，并按 Semantic Scholar Paper ID 去重；
-4. 将稳定匹配缓存到 `data/semantic-scholar-cache.json`，生成 `docs/assets/data/citations.json`。
-
-### 启用自动更新（API key 可选）
-
-工作流默认直接使用 Semantic Scholar 公开 API，无需配置密钥。在 **Actions → Update Semantic Scholar Citation Leaderboard → Run workflow** 可手动更新；之后每周一（北京时间）会自动刷新并提交数据。匿名请求使用共享限流池，生成器遇到 `429` 会退避重试、保存已完成缓存，并在下次继续。
-
-如果希望完成大量标题匹配，可在 [Semantic Scholar API 页面](https://www.semanticscholar.org/product/api#api-key-form) 申请免费 key，并在仓库 **Settings → Secrets and variables → Actions** 中添加可选的 `SEMANTIC_SCHOLAR_API_KEY` secret。官方初始 key 限流为每秒 1 次；程序默认按此速度运行。周更默认每次最多补充 100 个标题查询，DOI/arXiv 批量刷新不受这个数量限制。
-
-本地运行：
-
-```bash
-# 可选：不设置也能使用公开 API
-export SEMANTIC_SCHOLAR_API_KEY="your-key"
-python scripts/update_citation_leaderboard.py
-```
-
-只使用已有缓存重新生成前端数据（不访问网络）：
-
-```bash
-python scripts/update_citation_leaderboard.py --offline
-```
-
-若个别论文需要人工纠正，可在 `data/semantic-scholar-overrides.json` 中将笔记路径映射到经过核验的 Semantic Scholar Paper ID；格式说明见 `data/README.md`。
-
-## 📄 License
-
-本项目内容采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。
-
-- **署名** — 使用时请注明出处
-- **非商业性使用** — 不得用于商业目的
-- **相同方式共享** — 修改后须以相同协议分享
+本项目 fork 自 [zhaoyang97 / Paper Notes](https://github.com/zhaoyang97/Paper-Notes)，沿用其论文笔记与分类。CiteAtlas 增加了引用匹配、NeurIPS 2026 会场目录和独立的排行榜界面。笔记原作者为 zhaoyang97，沿用 [CC BY-NC-SA 4.0](LICENSE)。会议元数据来自 [NeurIPS](https://neurips.cc/Downloads/2026)，引用数据来自 [Semantic Scholar](https://www.semanticscholar.org/)。
