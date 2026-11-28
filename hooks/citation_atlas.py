@@ -1,6 +1,7 @@
 """Prepare a first-paint snapshot for the two standalone ranking pages."""
 import csv
 import json
+import subprocess
 from functools import lru_cache
 from pathlib import Path
 
@@ -36,3 +37,8 @@ def on_page_context(context, page, config, **kwargs):
         context["atlas"] = snapshot(directory, (directory / "citations.json").stat().st_mtime_ns,
                                     (directory / "neurips2026.csv").stat().st_mtime_ns)
     return context
+
+
+def on_post_build(config, **kwargs):
+    script = Path(__file__).resolve().parents[1] / "scripts" / "build_ranking_pages.cjs"
+    subprocess.run(["node", str(script), str(Path(config.site_dir) / "assets" / "data")], check=True)

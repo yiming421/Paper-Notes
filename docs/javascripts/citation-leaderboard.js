@@ -101,6 +101,9 @@
       dataPromises[url] = fetch(url, { credentials: "same-origin" }).then(function (response) {
         if (!response.ok) throw new Error("HTTP " + response.status);
         return response.json();
+      }).catch(function (error) {
+        delete dataPromises[url];
+        throw error;
       });
     }
     return dataPromises[url];
@@ -127,21 +130,14 @@
     if (values.indexOf(selected) >= 0) select.value = selected;
   }
 
-  function distinctNotes(papers, conference, year) {
-    var seen = Object.create(null);
-    papers.forEach(function (paper) {
-      paper.notes.forEach(function (note) {
-        if (
-          (!conference || conferenceName(note.conference) === conference) &&
-          (!year || conferenceYear(note.conference) === year)
-        ) {
-          seen[note.area] = true;
-        }
-      });
+  function distinctAreas(areas, conference, year) {
+    var names = new Set();
+    Object.keys(areas).forEach(function (venue) {
+      if ((!conference || conferenceName(venue) === conference) && (!year || conferenceYear(venue) === year)) {
+        areas[venue].forEach(function (area) { names.add(area); });
+      }
     });
-    return Object.keys(seen).sort(function (a, b) {
-      return prettyArea(a).localeCompare(prettyArea(b), "zh-CN");
-    });
+    return Array.from(names).sort(function (a, b) { return prettyArea(a).localeCompare(prettyArea(b), "zh-CN"); });
   }
 
   function matchingNotes(paper, conference, year, area) {
@@ -307,11 +303,11 @@
     history.replaceState(history.state, "", url.pathname + url.search + url.hash);
   }
 
-  function initLeaderboard(root, data) {
+  function initLeaderboard(root, data, directory) {
     if (root.dataset.ready === "true") return;
     root.dataset.ready = "true";
 
-    var papers = Array.isArray(data.papers) ? data.papers : [];
+    var requestId = 0;
     var search = root.querySelector("#cl-search");
     var conference = root.querySelector("#cl-conference");
     var year = root.querySelector("#cl-year");
@@ -335,12 +331,9 @@
 
     var conferences = Object.create(null);
     var years = Object.create(null);
-    papers.forEach(function (paper) {
-      paper.notes.forEach(function (note) {
-        conferences[conferenceName(note.conference)] = true;
-        var noteYear = conferenceYear(note.conference);
-        if (noteYear) years[noteYear] = true;
-      });
+    Object.keys(data.areas).forEach(function (venue) {
+      conferences[conferenceName(venue)] = true;
+      years[conferenceYear(venue)] = true;
     });
     fillSelect(
       conference,
@@ -379,7 +372,7 @@
     }
     fillSelect(
       area,
-      distinctNotes(papers, conference.value, year.value),
+      distinctAreas(data.areas, conference.value, year.value),
       "全部领域",
       prettyArea
     );
@@ -399,7 +392,7 @@
       var previousArea = area.value;
       fillSelect(
         area,
-        distinctNotes(papers, conference.value, year.value),
+        distinctAreas(data.areas, conference.value, year.value),
         "全部领域",
         prettyArea
       );
@@ -410,7 +403,7 @@
       }
     }
 
-    function render() {
+    async function renderResults(id) {
       var query = normalize(search.value);
       var selectedConference = conference.value;
       var selectedYear = year.value;
@@ -420,28 +413,42 @@
       var editionLink = root.querySelector(".edition-link");
       editionLink.href = isEdition ? editionLink.dataset.overviewUrl : editionLink.dataset.editionUrl;
       editionLink.textContent = isEdition ? "查看专题总览 ↗" : "NeurIPS 2026 专题排名 ↗";
-      var filtered = papers.filter(function (paper) {
-        var notes = matchingNotes(paper, selectedConference, selectedYear, selectedArea);
-        if (!notes.length) return false;
-        if (citedOnly.checked && paper.citations < 1) return false;
-        if (!query) return true;
-        var haystack = normalize(
-          paper.title +
-            " " +
-            notes
-              .map(function (note) {
-                return (note.title || "") + " " + note.conference + " " + prettyArea(note.area);
-              })
-              .join(" ")
-        );
-        return haystack.indexOf(query) >= 0;
-      });
-      sortPapers(filtered, sort.value);
-
-      var totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+      var scope = !selectedConference && !selectedYear ? data.scopes.all :
+        (selectedConference && selectedYear ? data.scopes[selectedConference + selectedYear] : null);
+      var paged = scope && !query && !selectedArea && !citedOnly.checked && sort.value === "citations";
+      var count, filtered, visible;
+      if (paged) {
+        count = scope.count;
+      } else {
+        var papers = scope && scope !== data.scopes.all
+          ? await loadData(directory + scope.key + ".json")
+          : (await loadData(root.dataset.source)).papers;
+        if (id !== requestId) return;
+        filtered = papers.filter(function (paper) {
+          var notes = matchingNotes(paper, selectedConference, selectedYear, selectedArea);
+          if (!notes.length) return false;
+          if (citedOnly.checked && paper.citations < 1) return false;
+          if (!query) return true;
+          var haystack = normalize(
+            paper.title +
+              " " +
+              notes
+                .map(function (note) {
+                  return (note.title || "") + " " + note.conference + " " + prettyArea(note.area);
+                })
+                .join(" ")
+          );
+          return haystack.indexOf(query) >= 0;
+        });
+        sortPapers(filtered, sort.value);
+        count = filtered.length;
+      }
+      var totalPages = Math.max(1, Math.ceil(count / PAGE_SIZE));
       page = Math.min(Math.max(1, page), totalPages);
       var start = (page - 1) * PAGE_SIZE;
-      var visible = filtered.slice(start, start + PAGE_SIZE);
+      visible = paged && count ? await loadData(directory + scope.key + "-" + page + ".json")
+        : (filtered || []).slice(start, start + PAGE_SIZE);
+      if (id !== requestId) return;
       renderRows(tbody, visible, start, selectedConference, selectedYear, selectedArea);
 
       if (!visible.length) {
@@ -456,13 +463,13 @@
 
       status.textContent =
         "共 " +
-        numberFormat.format(filtered.length) +
+        numberFormat.format(count) +
         " 篇论文" +
-        (filtered.length
+        (count
           ? " · 显示第 " +
             numberFormat.format(start + 1) +
             "–" +
-            numberFormat.format(Math.min(start + PAGE_SIZE, filtered.length)) +
+            numberFormat.format(Math.min(start + PAGE_SIZE, count)) +
             " 名"
           : "");
       pageLabel.textContent = "第 " + page + " / " + totalPages + " 页";
@@ -476,6 +483,14 @@
         sort: sort.value,
         citedOnly: citedOnly.checked,
         page: page
+      });
+    }
+
+    function render() {
+      var id = ++requestId;
+      status.textContent = "正在读取排名…";
+      renderResults(id).catch(function () {
+        if (id === requestId) status.textContent = "数据加载失败，请重试。";
       });
     }
 
@@ -535,64 +550,14 @@
     render();
   }
 
-  function updateOverview(root, data) {
-    var counts = [0, 0, 0, 0, 0, 0];
-    var thresholds = [1, 5, 10, 25, 100];
-    var matched = 0;
-    var citations = 0;
-    var leaders = document.createDocumentFragment();
-    var topCount = 0;
-    data.papers.forEach(function (paper) {
-      var notes = paper.notes.filter(function (note) { return note.conference === "NeurIPS2026"; });
-      if (!notes.length) return;
-      var bucket = thresholds.filter(function (minimum) { return paper.citations >= minimum; }).length;
-      counts[bucket] += 1;
-      matched += notes.length;
-      citations += paper.citations;
-      if (topCount >= 5) return;
-      topCount += 1;
-      var row = document.createElement("tr");
-      appendTextCell(row, "", String(topCount).padStart(2, "0"));
-      var cell = document.createElement("td");
-      var link = document.createElement("a");
-      link.href = notes[0].path;
-      link.textContent = notes[0].title || paper.title;
-      cell.appendChild(link);
-      row.appendChild(cell);
-      appendTextCell(row, "", numberFormat.format(paper.citations));
-      leaders.appendChild(row);
-    });
-    root.querySelector("#edition-leaders").replaceChildren(leaders);
-    var total = Number(root.dataset.catalogTotal);
-    setText(root, "[data-edition='matched']", numberFormat.format(matched));
-    setText(root, "[data-edition='citations']", numberFormat.format(citations));
-    setText(root, "[data-edition='coverage']", total ? (100 * matched / total).toFixed(2) + "%" : "—");
-    setText(root, "[data-edition='updated']", data.generated_at.slice(0, 10));
-    var maximum = Math.max.apply(null, [1].concat(counts));
-    root.querySelectorAll(".bar").forEach(function (bar, i) {
-      bar.style.setProperty("--height", (100 * counts[i] / maximum) + "%");
-      bar.firstElementChild.textContent = numberFormat.format(counts[i]);
-    });
-  }
-
-  function init() {
-    var home = document.getElementById("atlas-home");
-    var root = home || document.getElementById("citation-leaderboard");
+  document.addEventListener("DOMContentLoaded", function () {
+    var root = document.getElementById("citation-leaderboard");
     if (!root) return;
-    var dataUrl = new URL(root.dataset.source, location.href).href;
-    var latest = root.dataset.latest;
-    var request = latest && location.hostname === "yiming421.github.io"
-      ? loadData(latest).catch(function () { return loadData(dataUrl); })
-      : loadData(dataUrl);
-    request.then(function (data) {
-      if (home) updateOverview(home, data);
-      else initLeaderboard(root, data);
-    }).catch(function (error) {
-      var status = root.querySelector("#cl-status");
-      if (status) status.textContent = "引用数据加载失败，请刷新页面重试。";
-      if (window.console) console.error("AI 论文引用榜:", error);
+    var directory = new URL("ranking/", new URL(root.dataset.source, location.href)).href;
+    loadData(directory + "index.json").then(function (data) {
+      initLeaderboard(root, data, directory);
+    }).catch(function () {
+      setText(root, "#cl-status", "数据加载失败，请刷新重试。");
     });
-  }
-
-  document.addEventListener("DOMContentLoaded", init);
+  });
 })();
