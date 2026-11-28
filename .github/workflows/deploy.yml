@@ -38,9 +38,9 @@ jobs:
       - name: Verify canonical deployment
         run: |
           test ! -e site/CNAME
-          grep -Fq '<link rel="canonical" href="https://yiming421.github.io/Paper-Notes/">' site/index.html
-          grep -Fq 'Sitemap: https://yiming421.github.io/Paper-Notes/sitemap.xml' site/robots.txt
-          grep -Fq '<loc>https://yiming421.github.io/Paper-Notes/</loc>' site/sitemap.xml
+          grep -Fq '<link rel="canonical" href="https://yiming421.github.io/citation-leaderboard/">' site/index.html
+          grep -Fq 'Sitemap: https://yiming421.github.io/citation-leaderboard/sitemap.xml' site/robots.txt
+          grep -Fq '<loc>https://yiming421.github.io/citation-leaderboard/</loc>' site/sitemap.xml
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
