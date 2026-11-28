@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 Crawl-delay: 1
 
-Sitemap: https://yiming421.github.io/Paper-Notes/sitemap.xml
-Sitemap: https://yiming421.github.io/Paper-Notes/sitemap-sections.xml
+Sitemap: https://yiming421.github.io/citation-leaderboard/sitemap.xml
+Sitemap: https://yiming421.github.io/citation-leaderboard/sitemap-sections.xml

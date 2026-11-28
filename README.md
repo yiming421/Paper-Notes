@@ -2,9 +2,9 @@
 
 本榜按 Semantic Scholar 引用数整理 AI 会议论文。首页聚焦 NeurIPS 2026，展示引用分布、收录覆盖率和引用前五名。完整榜支持跨会议比较，可按年份、领域和论文题名筛选，也能按高影响力引用排序。
 
-**[打开排行榜](https://yiming421.github.io/Paper-Notes/)**　·　[NeurIPS 2026 排名](https://yiming421.github.io/Paper-Notes/leaderboard/?conference=NeurIPS&year=2026)　·　[全部会议](https://yiming421.github.io/Paper-Notes/leaderboard/)
+**[打开排行榜](https://yiming421.github.io/citation-leaderboard/)**　·　[NeurIPS 2026 排名](https://yiming421.github.io/citation-leaderboard/leaderboard/?conference=NeurIPS&year=2026)　·　[全部会议](https://yiming421.github.io/citation-leaderboard/leaderboard/)
 
-[![NeurIPS 2026 专题首页预览](docs/assets/citeatlas-overview.webp)](https://yiming421.github.io/Paper-Notes/)
+[![NeurIPS 2026 专题首页预览](docs/assets/citeatlas-overview.webp)](https://yiming421.github.io/citation-leaderboard/)
 
 ## NeurIPS 2026
 

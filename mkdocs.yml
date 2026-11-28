@@ -1,7 +1,7 @@
 site_name: AI 论文引用榜
 site_description: AI 会议论文引用排行榜，聚焦 NeurIPS 2026 的论文、引用与收录覆盖。
-site_url: https://yiming421.github.io/Paper-Notes/
-repo_url: https://github.com/yiming421/Paper-Notes
+site_url: https://yiming421.github.io/citation-leaderboard/
+repo_url: https://github.com/yiming421/citation-leaderboard
 repo_name: Star on GitHub
 docs_dir: docs
 site_dir: site
